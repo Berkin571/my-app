@@ -2,6 +2,45 @@ import type { FunctionComponent } from "react";
 import "./Leistungen.css";
 
 export const Leistungen: FunctionComponent = () => {
+  // Button action functions
+  const handleComeNow = () => {
+    // Scroll to top and show a message about coming without appointment
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    alert("Kommen Sie einfach vorbei! Keine Terminvereinbarung nötig.");
+  };
+
+  const handleViewPrices = () => {
+    // Scroll to services section to show prices
+    const servicesSection = document.querySelector(".services-section");
+    if (servicesSection) {
+      servicesSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const handleCall = () => {
+    // Open phone dialer
+    window.open("tel:+49123456789", "_self");
+  };
+
+  const handleEmail = () => {
+    // Open email client
+    const subject = encodeURIComponent("Anfrage zu Leistungen");
+    const body = encodeURIComponent(
+      "Guten Tag,\n\nich interessiere mich für Ihre Leistungen.\n\nMit freundlichen Grüßen"
+    );
+    window.open(
+      "mailto:info@example.com?subject=" + subject + "&body=" + body,
+      "_self"
+    );
+  };
+
+  const handleGetDirections = () => {
+    // Open Google Maps with directions
+    const url =
+      "https://www.google.com/maps/dir/?api=1&destination=48.1351,11.5820";
+    window.open(url, "_blank");
+  };
+
   return (
     <div className="leistungen-page">
       <div className="leistungen-header">
@@ -55,6 +94,17 @@ export const Leistungen: FunctionComponent = () => {
               <li>✓ Motormanagement</li>
               <li>✓ Prüfplakette</li>
             </ul>
+            <div className="service-actions">
+              <button className="btn btn-danger btn-small" onClick={handleCall}>
+                Anrufen
+              </button>
+              <button
+                className="btn btn-secondary btn-small"
+                onClick={handleEmail}
+              >
+                Anfrage
+              </button>
+            </div>
           </div>
 
           <div className="service-card featured">
@@ -97,6 +147,17 @@ export const Leistungen: FunctionComponent = () => {
               <li>✓ Abgasreinigung</li>
               <li>✓ Prüfplakette</li>
             </ul>
+            <div className="service-actions">
+              <button className="btn btn-danger btn-small" onClick={handleCall}>
+                Anrufen
+              </button>
+              <button
+                className="btn btn-secondary btn-small"
+                onClick={handleEmail}
+              >
+                Anfrage
+              </button>
+            </div>
           </div>
 
           <div className="service-card">
@@ -139,6 +200,17 @@ export const Leistungen: FunctionComponent = () => {
               <li>✓ Abgasreinigung</li>
               <li>✓ Prüfbericht</li>
             </ul>
+            <div className="service-actions">
+              <button className="btn btn-danger btn-small" onClick={handleCall}>
+                Anrufen
+              </button>
+              <button
+                className="btn btn-secondary btn-small"
+                onClick={handleEmail}
+              >
+                Anfrage
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -164,6 +236,9 @@ export const Leistungen: FunctionComponent = () => {
             <h3>Nachprüfung</h3>
             <p>Erneute Prüfung nach Mängelbehebung</p>
             <span className="price">15,00€</span>
+            <button className="btn btn-danger btn-small" onClick={handleCall}>
+              Buchen
+            </button>
           </div>
 
           <div className="additional-service-card">
@@ -182,6 +257,9 @@ export const Leistungen: FunctionComponent = () => {
             <h3>Prüfbericht</h3>
             <p>Detaillierter Prüfbericht mit Fotos</p>
             <span className="price">5,00€</span>
+            <button className="btn btn-danger btn-small" onClick={handleCall}>
+              Bestellen
+            </button>
           </div>
 
           <div className="additional-service-card">
@@ -203,6 +281,9 @@ export const Leistungen: FunctionComponent = () => {
             <h3>Beratung</h3>
             <p>Technische Beratung zu Mängeln</p>
             <span className="price">Kostenlos</span>
+            <button className="btn btn-danger btn-small" onClick={handleCall}>
+              Beratung
+            </button>
           </div>
 
           <div className="additional-service-card">
@@ -222,6 +303,9 @@ export const Leistungen: FunctionComponent = () => {
             <h3>Express-Service</h3>
             <p>Prüfung innerhalb von 15 Minuten</p>
             <span className="price">+10,00€</span>
+            <button className="btn btn-danger btn-small" onClick={handleCall}>
+              Express
+            </button>
           </div>
         </div>
       </div>
@@ -310,6 +394,14 @@ export const Leistungen: FunctionComponent = () => {
             <p>Anhänger und Wohnwagen</p>
           </div>
         </div>
+        <div className="vehicle-types-cta">
+          <button
+            className="btn btn-primary btn-large"
+            onClick={handleGetDirections}
+          >
+            Standort finden
+          </button>
+        </div>
       </div>
 
       {/* CTA Section */}
@@ -317,10 +409,12 @@ export const Leistungen: FunctionComponent = () => {
         <h2>Fahrzeug zur Prüfung bringen?</h2>
         <p>Kommen Sie einfach vorbei - ohne Termin!</p>
         <div className="cta-buttons">
-          <button className="btn btn-primary btn-large">
+          <button className="btn btn-primary btn-large" onClick={handleComeNow}>
             Jetzt vorbeikommen
           </button>
-          <button className="btn btn-secondary">Preise ansehen</button>
+          <button className="btn btn-secondary" onClick={handleViewPrices}>
+            Preise ansehen
+          </button>
         </div>
       </div>
     </div>

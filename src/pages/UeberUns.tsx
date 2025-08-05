@@ -164,11 +164,11 @@ export const UeberUns: FunctionComponent<Partial<Company>> = ({
                 <circle cx="9" cy="7" r="4"></circle>
               </svg>
             </div>
-            <h3>Michael Schmidt</h3>
-            <p className="member-role">Geschäftsführer & Prüfer</p>
+            <h3>Tugrul C.</h3>
+            <p className="member-role">KFZ Prüfingenieur</p>
             <p className="member-description">
-              Seit 2003 in der Fahrzeugprüfung tätig. Zertifizierter Prüfer mit
-              über 20 Jahren Erfahrung.
+              Spezialisiert auf Nutzfahrzeuge und Anhänger. Über 5 Jahre
+              Erfahrung in der Prüfung. Exzellenter Service.
             </p>
           </div>
 
@@ -186,33 +186,11 @@ export const UeberUns: FunctionComponent<Partial<Company>> = ({
                 <circle cx="9" cy="7" r="4"></circle>
               </svg>
             </div>
-            <h3>Sarah Weber</h3>
-            <p className="member-role">Prüferin</p>
+            <h3>Cihat K.</h3>
+            <p className="member-role">KFZ Prüfingenieur</p>
             <p className="member-description">
               Spezialisiert auf moderne Fahrzeugtechnologien und
-              Elektrofahrzeuge.
-            </p>
-          </div>
-
-          <div className="team-member">
-            <div className="member-photo">
-              <svg
-                width="80"
-                height="80"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-                <circle cx="9" cy="7" r="4"></circle>
-              </svg>
-            </div>
-            <h3>Thomas Müller</h3>
-            <p className="member-role">Prüfer</p>
-            <p className="member-description">
-              Experte für Nutzfahrzeuge und Anhänger. Über 15 Jahre Erfahrung in
-              der Prüfung.
+              Elektrofahrzeuge. Über 5 Jahre Erfahrung in der Prüfung.
             </p>
           </div>
         </div>

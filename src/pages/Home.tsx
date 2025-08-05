@@ -16,7 +16,7 @@ export const Home: FunctionComponent<Partial<Company>> = ({
       title: "KFZ-Hauptuntersuchung ohne Termin",
       subtitle: "Kommen Sie einfach vorbei - wir prüfen Ihr Fahrzeug sofort!",
       image:
-        "https://images.unsplash.com/photo-1563720223186-11003d5161e7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+        "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
       cta: "Jetzt vorbeikommen",
     },
     {
@@ -65,6 +65,36 @@ export const Home: FunctionComponent<Partial<Company>> = ({
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
   };
 
+  // Button action functions
+  const handleComeNow = () => {
+    // Scroll to map section to show location
+    const mapSection = document.querySelector(".map-section");
+    if (mapSection) {
+      mapSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const handleViewPrices = () => {
+    // Scroll to prices section
+    const pricesSection = document.querySelector(".prices-section");
+    if (pricesSection) {
+      pricesSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const handleLearnMore = () => {
+    // Scroll to why us section
+    const whyUsSection = document.querySelector(".why-us-section");
+    if (whyUsSection) {
+      whyUsSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const handleDiscoverServices = () => {
+    // Navigate to services page
+    window.location.href = "/leistungen";
+  };
+
   return (
     <div className="home-page">
       {/* Image Slider */}
@@ -83,7 +113,16 @@ export const Home: FunctionComponent<Partial<Company>> = ({
               <div className="slider-content">
                 <h1 className="slider-title">{slide.title}</h1>
                 <p className="slider-subtitle">{slide.subtitle}</p>
-                <button className="slider-cta btn btn-danger btn-large">
+                <button
+                  className="slider-cta btn btn-danger btn-large"
+                  onClick={() => {
+                    if (slide.cta === "Jetzt vorbeikommen") handleComeNow();
+                    else if (slide.cta === "Preise ansehen") handleViewPrices();
+                    else if (slide.cta === "Mehr erfahren") handleLearnMore();
+                    else if (slide.cta === "Leistungen entdecken")
+                      handleDiscoverServices();
+                  }}
+                >
                   {slide.cta}
                 </button>
               </div>
@@ -183,6 +222,7 @@ export const Home: FunctionComponent<Partial<Company>> = ({
           <button
             className="btn btn-danger btn-large"
             style={{ marginLeft: "1rem" }}
+            onClick={handleComeNow}
           >
             Jetzt vorbeikommen
           </button>
@@ -443,10 +483,15 @@ export const Home: FunctionComponent<Partial<Company>> = ({
           Sie Ihr Fahrzeug prüfen.
         </p>
         <div className="cta-buttons">
-          <button className="btn btn-secondary btn-large">
+          <button
+            className="btn btn-secondary btn-large"
+            onClick={handleComeNow}
+          >
             Jetzt vorbeikommen
           </button>
-          <button className="btn btn-secondary">Preise ansehen</button>
+          <button className="btn btn-secondary" onClick={handleViewPrices}>
+            Preise ansehen
+          </button>
         </div>
       </div>
 
