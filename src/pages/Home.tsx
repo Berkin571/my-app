@@ -215,7 +215,7 @@ export const Home: FunctionComponent<Partial<Company>> = ({
             >
               <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
             </svg>
-            <span>Ab 29,50€</span>
+            <span>Ab 50€</span>
           </div>
         </div>
         <div className="hero-cta">
@@ -235,7 +235,7 @@ export const Home: FunctionComponent<Partial<Company>> = ({
         <div className="prices-grid">
           <div className="price-card">
             <h3 className="price-title">Hauptuntersuchung</h3>
-            <div className="price-amount">29,50€</div>
+            <div className="price-amount">120€</div>
             <ul className="price-features">
               <li>✓ Vollständige Prüfung</li>
               <li>✓ 30-45 Minuten</li>
@@ -246,7 +246,7 @@ export const Home: FunctionComponent<Partial<Company>> = ({
 
           <div className="price-card featured">
             <h3 className="price-title">Haupt- + Abgasuntersuchung</h3>
-            <div className="price-amount">39,50€</div>
+            <div className="price-amount">180€</div>
             <ul className="price-features">
               <li>✓ Alle HU-Leistungen</li>
               <li>✓ Abgaswerte prüfen</li>
@@ -257,7 +257,7 @@ export const Home: FunctionComponent<Partial<Company>> = ({
 
           <div className="price-card">
             <h3 className="price-title">Abgasuntersuchung</h3>
-            <div className="price-amount">19,50€</div>
+            <div className="price-amount">50€</div>
             <ul className="price-features">
               <li>✓ Abgaswerte messen</li>
               <li>✓ 15-20 Minuten</li>
@@ -326,8 +326,8 @@ export const Home: FunctionComponent<Partial<Company>> = ({
             </div>
             <h3>Günstige Preise</h3>
             <p>
-              Transparente Preise ohne versteckte Kosten. Hauptuntersuchung
-              bereits ab 29,50€.
+              Transparente Preise ohne versteckte Kosten. Abgasuntersuchung
+              bereits ab 50€.
             </p>
           </div>
           <div className="why-us-item">
@@ -414,6 +414,21 @@ export const Home: FunctionComponent<Partial<Company>> = ({
         </div>
       </div>
 
+      {/* Map Section */}
+      <div className="map-section">
+        <h2>Unser Standort</h2>
+        <p className="subtitle">
+          Finden Sie uns in der Innenstadt - gut erreichbar mit dem Auto und
+          öffentlichen Verkehrsmitteln
+        </p>
+        <GoogleMap
+          latitude={address?.latitude ?? 0}
+          longitude={address?.longitude ?? 0}
+          zoom={15}
+          title={name}
+        />
+      </div>
+
       {/* Hours Section */}
       <div className="hours-section">
         <div className="hours-content">
@@ -493,21 +508,6 @@ export const Home: FunctionComponent<Partial<Company>> = ({
             Preise ansehen
           </button>
         </div>
-      </div>
-
-      {/* Map Section */}
-      <div className="map-section">
-        <h2>Unser Standort</h2>
-        <p className="subtitle">
-          Finden Sie uns in der Innenstadt - gut erreichbar mit dem Auto und
-          öffentlichen Verkehrsmitteln
-        </p>
-        <GoogleMap
-          latitude={address?.latitude ?? 0}
-          longitude={address?.longitude ?? 0}
-          zoom={15}
-          title={name}
-        />
       </div>
     </div>
   );

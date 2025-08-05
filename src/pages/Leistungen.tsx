@@ -79,7 +79,7 @@ export const Leistungen: FunctionComponent = () => {
               </div>
               <div className="service-detail">
                 <span className="detail-label">Preis:</span>
-                <span className="detail-value">29,50€</span>
+                <span className="detail-value">120€</span>
               </div>
               <div className="service-detail">
                 <span className="detail-label">Gültigkeit:</span>
@@ -132,7 +132,7 @@ export const Leistungen: FunctionComponent = () => {
               </div>
               <div className="service-detail">
                 <span className="detail-label">Preis:</span>
-                <span className="detail-value">39,50€</span>
+                <span className="detail-value">180€</span>
               </div>
               <div className="service-detail">
                 <span className="detail-label">Gültigkeit:</span>
@@ -186,7 +186,7 @@ export const Leistungen: FunctionComponent = () => {
               </div>
               <div className="service-detail">
                 <span className="detail-label">Preis:</span>
-                <span className="detail-value">19,50€</span>
+                <span className="detail-value">50€</span>
               </div>
               <div className="service-detail">
                 <span className="detail-label">Gültigkeit:</span>
