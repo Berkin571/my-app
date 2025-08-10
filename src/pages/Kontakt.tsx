@@ -167,7 +167,8 @@ export const Kontakt: FunctionComponent<Partial<Company>> = ({
             <label className="checkbox-label">
               <input type="checkbox" name="privacy" required />
               <span className="checkmark"></span>
-              Ich stimme der <a href="#privacy">Datenschutzerklärung</a> zu *
+              Ich stimme der <a href="/datenschutz">Datenschutzerklärung</a> zu
+              *
             </label>
           </div>
 
