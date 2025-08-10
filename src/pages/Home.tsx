@@ -7,7 +7,6 @@ import {
   FiPlus,
   FiStar,
   FiCheck,
-  FiMapPin
 } from "react-icons/fi";
 import { GoogleMap } from "../components";
 import "./Home.css";

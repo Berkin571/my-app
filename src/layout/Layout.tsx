@@ -1,17 +1,16 @@
 import type { FunctionComponent, ReactNode } from "react";
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { 
-  FiMapPin, 
-  FiMenu, 
-  FiPhone, 
-  FiX, 
-  FiHome, 
-  FiTool, 
-  FiHelpCircle, 
-  FiMail, 
-  FiUser, 
-  FiChevronUp 
+import {
+  FiMapPin,
+  FiMenu,
+  FiPhone,
+  FiX,
+  FiHome,
+  FiTool,
+  FiHelpCircle,
+  FiUser,
+  FiChevronUp,
 } from "react-icons/fi";
 import "./Layout.css";
 import type { Company } from "../types";
@@ -74,8 +73,14 @@ export const Layout: FunctionComponent<Props> = ({ children, company }) => {
           </div>
           <div className="advertisement-container">
             <div className="advertisement-text">
-              <span>✓ Professionelle Gutachten ✓ Schnelle Bearbeitung ✓ Faire Preise ✓ Zuverlässiger Service</span>
-              <span>✓ Professionelle Gutachten ✓ Schnelle Bearbeitung ✓ Faire Preise ✓ Zuverlässiger Service</span>
+              <span>
+                ✓ Professionelle Gutachten ✓ Schnelle Bearbeitung ✓ Faire Preise
+                ✓ Zuverlässiger Service
+              </span>
+              <span>
+                ✓ Professionelle Gutachten ✓ Schnelle Bearbeitung ✓ Faire Preise
+                ✓ Zuverlässiger Service
+              </span>
             </div>
           </div>
         </div>
@@ -132,7 +137,7 @@ export const Layout: FunctionComponent<Props> = ({ children, company }) => {
                 className={isActive("/") ? "active" : ""}
                 onClick={toggleSidebar}
               >
-                <FiHome size={20} color='#000' />
+                <FiHome size={20} color="#000" />
                 Startseite
               </Link>
             </li>
