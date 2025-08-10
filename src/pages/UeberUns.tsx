@@ -1,4 +1,5 @@
 import type { FunctionComponent } from "react";
+import { FiCheck, FiStar, FiUser, FiPlus, FiAward } from "react-icons/fi";
 import "./UeberUns.css";
 import type { Company } from "../types";
 
@@ -60,17 +61,7 @@ export const UeberUns: FunctionComponent<Partial<Company>> = ({
         <div className="values-grid">
           <div className="value-card">
             <div className="value-icon">
-              <svg
-                width="40"
-                height="40"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path d="M9 12l2 2 4-4"></path>
-                <path d="M21 12c-1 0-2.4-.4-3.5-1.5S16 9 16 8s.4-2.5 1.5-3.5S20 3 21 3s2.4.4 3.5 1.5S26 7 26 8s-.4 2.5-1.5 3.5S22 12 21 12z"></path>
-              </svg>
+              <FiCheck size={40} />
             </div>
             <h3>Zuverlässigkeit</h3>
             <p>
@@ -82,16 +73,7 @@ export const UeberUns: FunctionComponent<Partial<Company>> = ({
 
           <div className="value-card">
             <div className="value-icon">
-              <svg
-                width="40"
-                height="40"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
-              </svg>
+              <FiStar size={40} />
             </div>
             <h3>Transparenz</h3>
             <p>
@@ -103,19 +85,7 @@ export const UeberUns: FunctionComponent<Partial<Company>> = ({
 
           <div className="value-card">
             <div className="value-icon">
-              <svg
-                width="40"
-                height="40"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-                <circle cx="9" cy="7" r="4"></circle>
-                <path d="m22 21-2-2"></path>
-                <path d="M16 16l4 4 4-4"></path>
-              </svg>
+              <FiUser size={40} />
             </div>
             <h3>Kundenservice</h3>
             <p>
@@ -126,16 +96,7 @@ export const UeberUns: FunctionComponent<Partial<Company>> = ({
 
           <div className="value-card">
             <div className="value-icon">
-              <svg
-                width="40"
-                height="40"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path d="M12 2v20M2 12h20"></path>
-              </svg>
+              <FiPlus size={40} />
             </div>
             <h3>Innovation</h3>
             <p>
@@ -152,17 +113,7 @@ export const UeberUns: FunctionComponent<Partial<Company>> = ({
         <div className="team-grid">
           <div className="team-member">
             <div className="member-photo">
-              <svg
-                width="80"
-                height="80"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-                <circle cx="9" cy="7" r="4"></circle>
-              </svg>
+              <FiUser size={80} />
             </div>
             <h3>Tugrul C.</h3>
             <p className="member-role">KFZ Prüfingenieur</p>
@@ -174,17 +125,7 @@ export const UeberUns: FunctionComponent<Partial<Company>> = ({
 
           <div className="team-member">
             <div className="member-photo">
-              <svg
-                width="80"
-                height="80"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-                <circle cx="9" cy="7" r="4"></circle>
-              </svg>
+              <FiUser size={80} />
             </div>
             <h3>Cihat K.</h3>
             <p className="member-role">KFZ Prüfingenieur</p>
@@ -202,17 +143,7 @@ export const UeberUns: FunctionComponent<Partial<Company>> = ({
         <div className="certifications-grid">
           <div className="certification-card">
             <div className="certification-icon">
-              <svg
-                width="40"
-                height="40"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path d="M9 12l2 2 4-4"></path>
-                <path d="M21 12c-1 0-2.4-.4-3.5-1.5S16 9 16 8s.4-2.5 1.5-3.5S20 3 21 3s2.4.4 3.5 1.5S26 7 26 8s-.4 2.5-1.5 3.5S22 12 21 12z"></path>
-              </svg>
+              <FiAward size={40} />
             </div>
             <h3>DEKRA Zertifizierung</h3>
             <p>Offiziell anerkannte Prüfstelle</p>
@@ -220,17 +151,7 @@ export const UeberUns: FunctionComponent<Partial<Company>> = ({
 
           <div className="certification-card">
             <div className="certification-icon">
-              <svg
-                width="40"
-                height="40"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path d="M9 12l2 2 4-4"></path>
-                <path d="M21 12c-1 0-2.4-.4-3.5-1.5S16 9 16 8s.4-2.5 1.5-3.5S20 3 21 3s2.4.4 3.5 1.5S26 7 26 8s-.4 2.5-1.5 3.5S22 12 21 12z"></path>
-              </svg>
+              <FiAward size={40} />
             </div>
             <h3>TÜV Anerkennung</h3>
             <p>Qualitätsstandards erfüllt</p>
@@ -238,17 +159,7 @@ export const UeberUns: FunctionComponent<Partial<Company>> = ({
 
           <div className="certification-card">
             <div className="certification-icon">
-              <svg
-                width="40"
-                height="40"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path d="M9 12l2 2 4-4"></path>
-                <path d="M21 12c-1 0-2.4-.4-3.5-1.5S16 9 16 8s.4-2.5 1.5-3.5S20 3 21 3s2.4.4 3.5 1.5S26 7 26 8s-.4 2.5-1.5 3.5S22 12 21 12z"></path>
-              </svg>
+              <FiAward size={40} />
             </div>
             <h3>ISO 9001</h3>
             <p>Qualitätsmanagement zertifiziert</p>

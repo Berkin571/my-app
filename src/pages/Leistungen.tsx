@@ -1,4 +1,5 @@
 import type { FunctionComponent } from "react";
+import { FiTool, FiStar, FiTrendingUp, FiCheck, FiTruck, FiUser } from "react-icons/fi";
 import "./Leistungen.css";
 
 export const Leistungen: FunctionComponent = () => {
@@ -56,16 +57,7 @@ export const Leistungen: FunctionComponent = () => {
         <div className="services-grid">
           <div className="service-card">
             <div className="service-icon">
-              <svg
-                width="48"
-                height="48"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
-              </svg>
+              <FiTool size={48} />
             </div>
             <h3>Hauptuntersuchung (HU)</h3>
             <p className="service-description">
@@ -109,16 +101,7 @@ export const Leistungen: FunctionComponent = () => {
 
           <div className="service-card featured">
             <div className="service-icon">
-              <svg
-                width="48"
-                height="48"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
-              </svg>
+              <FiStar size={48} />
             </div>
             <h3>Haupt- + Abgasuntersuchung</h3>
             <p className="service-description">
@@ -162,17 +145,7 @@ export const Leistungen: FunctionComponent = () => {
 
           <div className="service-card">
             <div className="service-icon">
-              <svg
-                width="48"
-                height="48"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path d="M3 3v18h18"></path>
-                <path d="m19 9-5 5-4-4-3 3"></path>
-              </svg>
+              <FiTrendingUp size={48} />
             </div>
             <h3>Abgasuntersuchung (AU)</h3>
             <p className="service-description">
@@ -221,17 +194,7 @@ export const Leistungen: FunctionComponent = () => {
         <div className="additional-services-grid">
           <div className="additional-service-card">
             <div className="additional-service-icon">
-              <svg
-                width="32"
-                height="32"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path d="M9 12l2 2 4-4"></path>
-                <path d="M21 12c-1 0-2.4-.4-3.5-1.5S16 9 16 8s.4-2.5 1.5-3.5S20 3 21 3s2.4.4 3.5 1.5S26 7 26 8s-.4 2.5-1.5 3.5S22 12 21 12z"></path>
-              </svg>
+              <FiCheck size={32} />
             </div>
             <h3>Nachprüfung</h3>
             <p>Erneute Prüfung nach Mängelbehebung</p>
@@ -243,16 +206,7 @@ export const Leistungen: FunctionComponent = () => {
 
           <div className="additional-service-card">
             <div className="additional-service-icon">
-              <svg
-                width="32"
-                height="32"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
-              </svg>
+              <FiTool size={32} />
             </div>
             <h3>Prüfbericht</h3>
             <p>Detaillierter Prüfbericht mit Fotos</p>
@@ -264,19 +218,7 @@ export const Leistungen: FunctionComponent = () => {
 
           <div className="additional-service-card">
             <div className="additional-service-icon">
-              <svg
-                width="32"
-                height="32"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-                <circle cx="9" cy="7" r="4"></circle>
-                <path d="m22 21-2-2"></path>
-                <path d="M16 16l4 4 4-4"></path>
-              </svg>
+              <FiUser size={32} />
             </div>
             <h3>Beratung</h3>
             <p>Technische Beratung zu Mängeln</p>
@@ -288,17 +230,7 @@ export const Leistungen: FunctionComponent = () => {
 
           <div className="additional-service-card">
             <div className="additional-service-icon">
-              <svg
-                width="32"
-                height="32"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path d="M3 3v18h18"></path>
-                <path d="m19 9-5 5-4-4-3 3"></path>
-              </svg>
+              <FiTrendingUp size={32} />
             </div>
             <h3>Express-Service</h3>
             <p>Prüfung innerhalb von 15 Minuten</p>
@@ -316,18 +248,7 @@ export const Leistungen: FunctionComponent = () => {
         <div className="vehicle-types-grid">
           <div className="vehicle-type-card">
             <div className="vehicle-type-icon">
-              <svg
-                width="40"
-                height="40"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path d="M7 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
-                <path d="M17 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
-                <path d="M5 17h-2v-6l2-5h9l4 5h1a2 2 0 0 1 2 2v4h-2m-4 0h-6m-6 -6h15m-6 0v-5"></path>
-              </svg>
+              <FiTruck size={40} />
             </div>
             <h3>Pkw</h3>
             <p>Personenkraftwagen aller Klassen</p>
@@ -335,19 +256,7 @@ export const Leistungen: FunctionComponent = () => {
 
           <div className="vehicle-type-card">
             <div className="vehicle-type-icon">
-              <svg
-                width="40"
-                height="40"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path d="M7 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
-                <path d="M17 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
-                <path d="M5 17h-2v-6l2-5h9l4 5h1a2 2 0 0 1 2 2v4h-2m-4 0h-6m-6 -6h15m-6 0v-5"></path>
-                <path d="M12 17v-6"></path>
-              </svg>
+              <FiTruck size={40} />
             </div>
             <h3>Lkw</h3>
             <p>Lastkraftwagen und Transporter</p>
@@ -355,19 +264,7 @@ export const Leistungen: FunctionComponent = () => {
 
           <div className="vehicle-type-card">
             <div className="vehicle-type-icon">
-              <svg
-                width="40"
-                height="40"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path d="M7 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
-                <path d="M17 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
-                <path d="M5 17h-2v-6l2-5h9l4 5h1a2 2 0 0 1 2 2v4h-2m-4 0h-6m-6 -6h15m-6 0v-5"></path>
-                <path d="M8 12h8"></path>
-              </svg>
+              <FiTruck size={40} />
             </div>
             <h3>Busse</h3>
             <p>Busse und Kleinbusse</p>
@@ -375,20 +272,7 @@ export const Leistungen: FunctionComponent = () => {
 
           <div className="vehicle-type-card">
             <div className="vehicle-type-icon">
-              <svg
-                width="40"
-                height="40"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path d="M7 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
-                <path d="M17 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
-                <path d="M5 17h-2v-6l2-5h9l4 5h1a2 2 0 0 1 2 2v4h-2m-4 0h-6m-6 -6h15m-6 0v-5"></path>
-                <path d="M12 17v-6"></path>
-                <path d="M8 12h8"></path>
-              </svg>
+              <FiTruck size={40} />
             </div>
             <h3>Anhänger</h3>
             <p>Anhänger und Wohnwagen</p>

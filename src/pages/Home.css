@@ -548,6 +548,18 @@
   flex-wrap: wrap;
 }
 
+.cta-section .btn-secondary {
+  background: rgb(237, 237, 237);
+  color: #ef4444;
+  border: 1px solid rgb(237, 237, 237);
+}
+
+.cta-section .btn-secondary:hover {
+  background: rgb(237, 237, 237, 0.9);
+  color: #dc2626;
+  border-color: rgb(237, 237, 237);
+}
+
 /* Map Section */
 .map-section {
   padding: 4rem 2rem;
@@ -624,7 +636,7 @@
 
 @media (max-width: 480px) {
   .slider-section {
-    height: 95vh;
+    height: 55vh;
   }
 
   .slider-title {

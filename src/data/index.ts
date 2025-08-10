@@ -1,17 +1,17 @@
 import type { Company } from "../types";
 
 export const companyData: Company = {
-  name: "KÜS Moosburg",
+  name: "KÜS Ingolstadt",
   address: {
-    street: "Musterstraße",
-    houseNumber: "123",
-    city: "Moosburg",
-    zip: "12345",
+    street: "Ida-Noddack-Str.",
+    houseNumber: "15",
+    city: "Ingolstadt",
+    zip: "85053",
     country: "Deutschland",
-    latitude: 48.266667,
-    longitude: 11.666667,
+    latitude: 48.742128,
+    longitude: 11.483093,
   },
-  phone: "0815-12345678",
-  email: "info@kus-moosburg.de",
+  phone: "017680001155",
+  email: "info@kus-ingolstadt.de",
   logo: "",
 };

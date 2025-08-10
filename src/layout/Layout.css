@@ -214,25 +214,25 @@ body {
 
 /* Sidebar */
 .sidebar {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: -100%;
   width: var(--sidebar-width);
-  height: 87vh;
+  height: 100vh; /* Full device height on mobile */
   background: var(--text-light);
   border-right: 1px solid var(--border-color);
   box-shadow: var(--shadow-lg);
-  z-index: 1003;
+  z-index: 1005; /* Above overlay */
   transition: var(--transition);
   overflow-y: auto;
-  margin-top: 10px;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
+  margin-top: 0; /* Remove offset to truly cover full height */
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 @media (max-width: 700px) {
   .sidebar {
-    height: 97.5vh;
+    height: 100vh; /* Ensure small phones also use full height */
   }
 }
 
@@ -384,27 +384,40 @@ body {
 @media (min-width: 1024px) {
   .layout {
     grid-template-areas:
-      "location location"
-      "header header"
-      "sidebar main"
-      "footer footer";
-    grid-template-columns: var(--sidebar-width) 1fr;
+      "location"
+      "header"
+      "nav"
+      "main"
+      "footer";
+    grid-template-columns: 1fr;
   }
 
-  .sidebar {
-    position: static;
-    left: 0;
-    transform: none;
-    box-shadow: none;
-    border-right: 1px solid var(--border-color);
-    margin-top: 0;
-  }
-
-  .sidebar-overlay {
+  /* Hide burger button on desktop */
+  .sidebar-toggle {
     display: none;
   }
 
-  .sidebar-toggle {
+  /* Sidebar becomes a full-width navigation bar under header */
+  .sidebar {
+    grid-area: nav;
+    position: static;
+    left: 0;
+    width: 100%;
+    height: auto;
+    transform: none;
+    box-shadow: var(--shadow-sm);
+    border-right: none;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    background: var(--text-light);
+  }
+
+  .sidebar-overlay {
+    display: none; /* No overlay on desktop */
+  }
+
+  /* Remove the sidebar header (title + close) on desktop */
+  .sidebar-header {
     display: none;
   }
 
@@ -412,12 +425,37 @@ body {
     display: none;
   }
 
-  .sidebar-header {
-    background: var(--text-light);
+  /* Make nav horizontal and centered on desktop */
+  .sidebar-nav {
+    padding: 0;
+  }
+  .sidebar-nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  .sidebar-nav li {
+    display: inline-flex;
+  }
+  .sidebar-nav a {
+    padding: 0.875rem 1rem;
+    border-left: none;
+    border-bottom: 2px solid transparent;
+    background: transparent;
+  }
+  .sidebar-nav a:hover,
+  .sidebar-nav a.active {
+    background: transparent;
+    color: var(--text-primary);
+    border-bottom-color: var(--primary-color);
   }
 
-  .main {
-    padding: 2rem;
+  .sidebar-nav a.active svg {
+    stroke: var(--text-primary);
   }
 }
 
@@ -460,6 +498,7 @@ body {
   .location-left {
     flex-shrink: 0;
     min-width: 0;
+    display: none; /* Hide address on mobile */
   }
 
   .location-text {
@@ -511,7 +550,7 @@ body {
 
   /* Adjust sidebar for mobile with location bar */
   .sidebar {
-    margin-top: calc(60px + env(safe-area-inset-top));
+    
     z-index: 1005;
   }
 }

@@ -1,5 +1,14 @@
 import type { FunctionComponent } from "react";
 import { useState, useEffect } from "react";
+import {
+  FiChevronLeft,
+  FiChevronRight,
+  FiClock,
+  FiPlus,
+  FiStar,
+  FiCheck,
+  FiMapPin
+} from "react-icons/fi";
 import { GoogleMap } from "../components";
 import "./Home.css";
 import type { Company } from "../types";
@@ -131,28 +140,10 @@ export const Home: FunctionComponent<Partial<Company>> = ({
 
           {/* Navigation Arrows */}
           <button className="slider-nav slider-prev" onClick={prevSlide}>
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-            >
-              <polyline points="15,18 9,12 15,6"></polyline>
-            </svg>
+            <FiChevronLeft size={24} />
           </button>
           <button className="slider-nav slider-next" onClick={nextSlide}>
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-            >
-              <polyline points="9,18 15,12 9,6"></polyline>
-            </svg>
+            <FiChevronRight size={24} />
           </button>
 
           {/* Dots Navigation */}
@@ -178,43 +169,15 @@ export const Home: FunctionComponent<Partial<Company>> = ({
         </p>
         <div className="hero-features">
           <div className="hero-feature">
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-            >
-              <circle cx="12" cy="12" r="10"></circle>
-              <polyline points="12,6 12,12 16,14"></polyline>
-            </svg>
+            <FiClock size={24} />
             <span>Ohne Termin</span>
           </div>
           <div className="hero-feature">
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-            >
-              <path d="M12 2v20M2 12h20"></path>
-            </svg>
+            <FiPlus size={24} />
             <span>30-45 Minuten</span>
           </div>
           <div className="hero-feature">
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-            >
-              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
-            </svg>
+            <FiStar size={24} />
             <span>Ab 50€</span>
           </div>
         </div>
@@ -274,17 +237,7 @@ export const Home: FunctionComponent<Partial<Company>> = ({
         <div className="why-us-grid">
           <div className="why-us-item">
             <div className="why-us-icon">
-              <svg
-                width="32"
-                height="32"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <circle cx="12" cy="12" r="10"></circle>
-                <polyline points="12,6 12,12 16,14"></polyline>
-              </svg>
+              <FiClock size={32} />
             </div>
             <h3>Ohne Termin</h3>
             <p>
@@ -294,16 +247,7 @@ export const Home: FunctionComponent<Partial<Company>> = ({
           </div>
           <div className="why-us-item">
             <div className="why-us-icon">
-              <svg
-                width="32"
-                height="32"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path d="M12 2v20M2 12h20"></path>
-              </svg>
+              <FiPlus size={32} />
             </div>
             <h3>Schnell & Zuverlässig</h3>
             <p>
@@ -313,16 +257,7 @@ export const Home: FunctionComponent<Partial<Company>> = ({
           </div>
           <div className="why-us-item">
             <div className="why-us-icon">
-              <svg
-                width="32"
-                height="32"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
-              </svg>
+              <FiStar size={32} />
             </div>
             <h3>Günstige Preise</h3>
             <p>
@@ -332,17 +267,7 @@ export const Home: FunctionComponent<Partial<Company>> = ({
           </div>
           <div className="why-us-item">
             <div className="why-us-icon">
-              <svg
-                width="32"
-                height="32"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path d="M9 12l2 2 4-4"></path>
-                <path d="M21 12c-1 0-2.4-.4-3.5-1.5S16 9 16 8s.4-2.5 1.5-3.5S20 3 21 3s2.4.4 3.5 1.5S26 7 26 8s-.4 2.5-1.5 3.5S22 12 21 12z"></path>
-              </svg>
+              <FiCheck size={32} />
             </div>
             <h3>Erfahrene Prüfer</h3>
             <p>
@@ -359,16 +284,7 @@ export const Home: FunctionComponent<Partial<Company>> = ({
         <div className="requirements-grid">
           <div className="requirement-item">
             <div className="requirement-icon">
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path d="M9 12l2 2 4-4"></path>
-              </svg>
+              <FiCheck size={24} />
             </div>
             <div className="requirement-text">
               <h3>Fahrzeugschein</h3>
@@ -377,16 +293,7 @@ export const Home: FunctionComponent<Partial<Company>> = ({
           </div>
           <div className="requirement-item">
             <div className="requirement-icon">
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path d="M9 12l2 2 4-4"></path>
-              </svg>
+              <FiCheck size={24} />
             </div>
             <div className="requirement-text">
               <h3>Personalausweis</h3>
@@ -395,16 +302,7 @@ export const Home: FunctionComponent<Partial<Company>> = ({
           </div>
           <div className="requirement-item">
             <div className="requirement-icon">
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path d="M9 12l2 2 4-4"></path>
-              </svg>
+              <FiCheck size={24} />
             </div>
             <div className="requirement-text">
               <h3>Gültige HU</h3>
