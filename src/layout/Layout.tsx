@@ -29,6 +29,7 @@ export const Layout: FunctionComponent<Props> = ({ children, company }) => {
   const navigate = useNavigate();
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [hasScrolled, setHasScrolled] = useState(false);
   const location = useLocation();
 
   const toggleSidebar = () => {
@@ -52,16 +53,17 @@ export const Layout: FunctionComponent<Props> = ({ children, company }) => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
       setShowScrollTop(scrollY > 300);
+      setHasScrolled(scrollY > 0);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <div className="layout">
+    <div className={`layout ${hasScrolled ? "banner-hidden" : ""}`}>
       {/* Location Bar */}
-      <div className="location-bar">
+      <div className={`location-bar ${hasScrolled ? "scrolled" : ""}`}>
         <div className="location-content">
           <div className="location-left">
             <span className="location-icon">
@@ -201,9 +203,15 @@ export const Layout: FunctionComponent<Props> = ({ children, company }) => {
             </p>
           </div>
           <div className="footer-right">
-            <button type="button" onClick={() => navigate("/datenschutz")}>Datenschutz</button>
-            <button type="button" onClick={() => navigate("/agb")}>AGB</button>
-            <button type="button" onClick={() => navigate("/kontakt")}>Kontakt</button>
+            <button type="button" onClick={() => navigate("/datenschutz")}>
+              Datenschutz
+            </button>
+            <button type="button" onClick={() => navigate("/agb")}>
+              AGB
+            </button>
+            <button type="button" onClick={() => navigate("/kontakt")}>
+              Kontakt
+            </button>
           </div>
         </div>
       </footer>

@@ -17,6 +17,8 @@ import type { Company } from "../types";
 export const Home: FunctionComponent<Partial<Company>> = ({
   name,
   address,
+  phone,
+  email,
 }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -103,6 +105,18 @@ export const Home: FunctionComponent<Partial<Company>> = ({
   const handleDiscoverServices = () => {
     // Navigate to services page
     window.location.href = "/leistungen";
+  };
+
+  const handleCall = () => {
+    if (phone) {
+      window.open(`tel:${phone}`, "_self");
+    }
+  };
+
+  const handleEmail = () => {
+    if (email) {
+      window.open(`mailto:${email}`, "_self");
+    }
   };
 
   return (
@@ -202,7 +216,9 @@ export const Home: FunctionComponent<Partial<Company>> = ({
               <FiTool size={40} />
             </div>
             <h3>Hauptuntersuchung (HU)</h3>
-            <p>Vollständige technische Überprüfung gemäß gesetzlichen Vorgaben.</p>
+            <p>
+              Vollständige technische Überprüfung gemäß gesetzlichen Vorgaben.
+            </p>
           </div>
 
           <div className="home-service-card featured">
@@ -210,7 +226,10 @@ export const Home: FunctionComponent<Partial<Company>> = ({
               <FiStar size={40} />
             </div>
             <h3>Haupt- + Abgasuntersuchung</h3>
-            <p>Kombinierte Prüfung für maximale Sicherheit und Umweltverträglichkeit.</p>
+            <p>
+              Kombinierte Prüfung für maximale Sicherheit und
+              Umweltverträglichkeit.
+            </p>
           </div>
 
           <div className="home-service-card">
@@ -218,7 +237,10 @@ export const Home: FunctionComponent<Partial<Company>> = ({
               <FiTrendingUp size={40} />
             </div>
             <h3>Abgasuntersuchung (AU)</h3>
-            <p>Überprüfung der Abgaswerte und Umweltverträglichkeit Ihres Fahrzeugs.</p>
+            <p>
+              Überprüfung der Abgaswerte und Umweltverträglichkeit Ihres
+              Fahrzeugs.
+            </p>
           </div>
         </div>
         <div className="home-services-cta">
@@ -399,9 +421,15 @@ export const Home: FunctionComponent<Partial<Company>> = ({
           >
             Jetzt vorbeikommen
           </button>
-          <button className="btn btn-secondary" onClick={handleViewPrices}>
-            Preise ansehen
-          </button>
+          <p>oder</p>
+          <div className="cta-buttons-2">
+            <button className="btn btn-secondary" onClick={handleCall}>
+              Anrufen
+            </button>
+            <button className="btn btn-secondary" onClick={handleEmail}>
+              E-Mail
+            </button>
+          </div>
         </div>
       </div>
     </div>
