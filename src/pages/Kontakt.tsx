@@ -28,7 +28,13 @@ export const Kontakt: FunctionComponent<Partial<Company>> = ({
               <FiPhone size={32} />
             </div>
             <h3>Telefon</h3>
-            <p className="contact-detail">{phone}</p>
+            <p className="contact-detail">
+              {phone ? (
+                <a href={`tel:${phone}`} title="Anrufen">{phone}</a>
+              ) : (
+                phone
+              )}
+            </p>
             <p className="contact-note">Mo-Fr: 08:00-18:00 Uhr</p>
           </div>
 
@@ -37,7 +43,13 @@ export const Kontakt: FunctionComponent<Partial<Company>> = ({
               <FiMail size={32} />
             </div>
             <h3>E-Mail</h3>
-            <p className="contact-detail">{email}</p>
+            <p className="contact-detail">
+              {email ? (
+                <a href={`mailto:${email}`} title="E-Mail schreiben">{email}</a>
+              ) : (
+                email
+              )}
+            </p>
             <p className="contact-note">Antwort innerhalb 24h</p>
           </div>
 
@@ -63,11 +75,11 @@ export const Kontakt: FunctionComponent<Partial<Company>> = ({
             <div className="opening-hours">
               <div className="hours-row">
                 <span>Mo-Fr:</span>
-                <span>08:00-18:00</span>
+                <span>09:00-18:00</span>
               </div>
               <div className="hours-row">
                 <span>Sa:</span>
-                <span>09:00-14:00</span>
+                <span>09:00-13:00</span>
               </div>
               <div className="hours-row">
                 <span>So:</span>
@@ -86,7 +98,7 @@ export const Kontakt: FunctionComponent<Partial<Company>> = ({
             <h3>Mit dem Auto</h3>
             <p>
               Kostenlose Parkplätze direkt vor der Prüfstelle verfügbar.
-              Einfahrt über Musterstraße 123.
+              Die Zufahrt befindet sich über {address?.street} {address?.houseNumber}.
             </p>
             <div className="parking-info">
               <FiTruck size={20} />
@@ -97,17 +109,16 @@ export const Kontakt: FunctionComponent<Partial<Company>> = ({
           <div className="directions-info">
             <h3>Mit öffentlichen Verkehrsmitteln</h3>
             <p>
-              U-Bahn: U2 (Musterstraße), Bus: 100, 200 (Haltestelle
-              Musterstraße)
+              Nutzen Sie die nächstgelegenen Bus- und Bahnverbindungen nach {address?.city}.
             </p>
             <div className="public-transport">
               <div className="transport-option">
                 <FiTruck size={20} />
-                <span>U2 Musterstraße</span>
+                <span>Buslinien in {address?.city}</span>
               </div>
               <div className="transport-option">
                 <FiTruck size={20} />
-                <span>Bus 100, 200</span>
+                <span>Nächstgelegener Bahnhof in {address?.city}</span>
               </div>
             </div>
           </div>
@@ -123,6 +134,25 @@ export const Kontakt: FunctionComponent<Partial<Company>> = ({
           zoom={15}
           title={name}
         />
+        <div style={{ marginTop: "0.75rem" }}>
+          <a
+            className="btn btn-secondary"
+            href={`https://www.google.com/maps/dir/?api=1&destination=${address?.latitude},${address?.longitude}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Route mit Google Maps
+          </a>
+          <a
+            className="btn"
+            style={{ marginLeft: "0.5rem" }}
+            href={`https://maps.apple.com/?daddr=${address?.latitude},${address?.longitude}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Route mit Apple Karten
+          </a>
+        </div>
       </div>
 
       {/* Kontaktformular */}

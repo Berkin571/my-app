@@ -12,6 +12,6 @@ export const companyData: Company = {
     longitude: 11.483093,
   },
   phone: "017680001155",
-  email: "info@kus-ingolstadt.de",
+  email: "info@svb-kues.de",
   logo: "",
 };

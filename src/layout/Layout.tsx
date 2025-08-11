@@ -1,6 +1,6 @@
 import type { FunctionComponent, ReactNode } from "react";
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
   FiMapPin,
   FiMenu,
@@ -26,6 +26,7 @@ type Props = {
  * - ab Desktop-Breakpoint Grid mit Sidebar
  */
 export const Layout: FunctionComponent<Props> = ({ children, company }) => {
+  const navigate = useNavigate();
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
   const location = useLocation();
@@ -200,9 +201,9 @@ export const Layout: FunctionComponent<Props> = ({ children, company }) => {
             </p>
           </div>
           <div className="footer-right">
-            <a href="/datenschutz">Datenschutz</a>
-            <a href="/agb">AGB</a>
-            <a href="/kontakt">Kontakt</a>
+            <button type="button" onClick={() => navigate("/datenschutz")}>Datenschutz</button>
+            <button type="button" onClick={() => navigate("/agb")}>AGB</button>
+            <button type="button" onClick={() => navigate("/kontakt")}>Kontakt</button>
           </div>
         </div>
       </footer>

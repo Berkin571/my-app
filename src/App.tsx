@@ -23,8 +23,8 @@ function App() {
       <Layout company={companyData}>
         <Routes>
           <Route path="/" element={<Home {...companyData} />} />
-          <Route path="/leistungen" element={<Leistungen />} />
-          <Route path="/faq" element={<FAQ />} />
+          <Route path="/leistungen" element={<Leistungen {...companyData} />} />
+          <Route path="/faq" element={<FAQ {...companyData} />} />
           <Route path="/kontakt" element={<Kontakt {...companyData} />} />
           <Route path="/ueber-uns" element={<UeberUns {...companyData} />} />
           <Route

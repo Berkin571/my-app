@@ -204,6 +204,77 @@
   margin-top: 2rem;
 }
 
+/* Home Services Section */
+.home-services-section {
+  padding: 4rem 2rem;
+  background: #f8fafc;
+  border-radius: 20px;
+  margin: 2rem 0;
+}
+
+.home-services-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #1f2937;
+}
+
+.home-services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.home-service-card {
+  background: white;
+  border-radius: 16px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+}
+
+.home-service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+.home-service-card.featured {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: white;
+  border-color: #ef4444;
+}
+
+.home-service-card .service-icon svg {
+  color: #ef4444;
+}
+
+.home-service-card.featured .service-icon svg {
+  color: #fff;
+}
+
+.home-service-card h3 {
+  font-size: 1.25rem;
+  margin: 0.75rem 0;
+}
+
+.home-service-card p {
+  color: #6b7280;
+}
+
+.home-service-card.featured p,
+.home-service-card.featured h3 {
+  color: white;
+}
+
+.home-services-cta {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
 /* Prices Section */
 .prices-section {
   padding: 4rem 2rem;
@@ -587,20 +658,43 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .slider-section {
-    height: 400px;
+    height: 55vh;
+  }
+
+  .slider-content {
+    padding: 1rem;
   }
 
   .slider-title {
-    font-size: 2rem;
+    font-size: 1.75rem;
+    line-height: 1.2;
   }
 
   .slider-subtitle {
     font-size: 1rem;
+    max-width: 90%;
+    margin: 0 auto 1.5rem;
   }
 
   .slider-nav {
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
+  }
+
+  .slider-dots {
+    bottom: 12px;
+    gap: 8px;
+  }
+
+  .slider-dot {
+    width: 14px;
+    height: 14px;
+  }
+
+  .slider-cta {
+    padding: 0.75rem 1.25rem;
+    font-size: 1rem;
+    border-radius: 40px;
   }
 
   .hero-section h1 {
@@ -632,11 +726,24 @@
   .price-card.featured {
     transform: none;
   }
+
+  /* Services teaser on mobile */
+  .home-services-section {
+    padding: 2.5rem 1rem;
+    margin: 1rem 0;
+  }
+  .home-services-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .home-service-card {
+    padding: 1.25rem;
+  }
 }
 
 @media (max-width: 480px) {
   .slider-section {
-    height: 55vh;
+    height: 50vh;
   }
 
   .slider-title {
@@ -644,7 +751,17 @@
   }
 
   .slider-subtitle {
-    font-size: 0.875rem;
+    font-size: 0.9rem;
+  }
+
+  .slider-nav {
+    width: 32px;
+    height: 32px;
+  }
+
+  .slider-cta {
+    padding: 0.6rem 1rem;
+    font-size: 0.95rem;
   }
 
   .hero-section,
@@ -665,5 +782,17 @@
 
   .price-card {
     padding: 1.5rem;
+  }
+
+  /* Smaller headings on very small screens */
+  .home-services-section h2,
+  .why-us-section h2,
+  .faq-section h2,
+  .map-section h2,
+  .prices-section h2 {
+    font-size: 2rem;
+  }
+  .home-service-card h3 {
+    font-size: 1.125rem;
   }
 }

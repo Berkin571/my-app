@@ -7,6 +7,8 @@ import {
   FiPlus,
   FiStar,
   FiCheck,
+  FiTool,
+  FiTrendingUp,
 } from "react-icons/fi";
 import { GoogleMap } from "../components";
 import "./Home.css";
@@ -38,7 +40,7 @@ export const Home: FunctionComponent<Partial<Company>> = ({
     {
       id: 3,
       title: "Schnell & Zuverlässig",
-      subtitle: "Hauptuntersuchung in nur 30-45 Minuten - ab 29,50€",
+      subtitle: "Hauptuntersuchung in nur 30-45 Minuten",
       image:
         "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
       cta: "Mehr erfahren",
@@ -191,42 +193,38 @@ export const Home: FunctionComponent<Partial<Company>> = ({
         </div>
       </div>
 
-      {/* Prices Section */}
-      <div className="prices-section">
-        <h2>Unsere Preise</h2>
-        <div className="prices-grid">
-          <div className="price-card">
-            <h3 className="price-title">Hauptuntersuchung</h3>
-            <div className="price-amount">120€</div>
-            <ul className="price-features">
-              <li>✓ Vollständige Prüfung</li>
-              <li>✓ 30-45 Minuten</li>
-              <li>✓ Prüfplakette</li>
-              <li>✓ Gültig 2 Jahre</li>
-            </ul>
+      {/* Services Teaser Section */}
+      <div className="home-services-section">
+        <h2>Unsere Leistungen</h2>
+        <div className="home-services-grid">
+          <div className="home-service-card">
+            <div className="service-icon">
+              <FiTool size={40} />
+            </div>
+            <h3>Hauptuntersuchung (HU)</h3>
+            <p>Vollständige technische Überprüfung gemäß gesetzlichen Vorgaben.</p>
           </div>
 
-          <div className="price-card featured">
-            <h3 className="price-title">Haupt- + Abgasuntersuchung</h3>
-            <div className="price-amount">180€</div>
-            <ul className="price-features">
-              <li>✓ Alle HU-Leistungen</li>
-              <li>✓ Abgaswerte prüfen</li>
-              <li>✓ 45-60 Minuten</li>
-              <li>✓ Prüfplakette</li>
-            </ul>
+          <div className="home-service-card featured">
+            <div className="service-icon">
+              <FiStar size={40} />
+            </div>
+            <h3>Haupt- + Abgasuntersuchung</h3>
+            <p>Kombinierte Prüfung für maximale Sicherheit und Umweltverträglichkeit.</p>
           </div>
 
-          <div className="price-card">
-            <h3 className="price-title">Abgasuntersuchung</h3>
-            <div className="price-amount">50€</div>
-            <ul className="price-features">
-              <li>✓ Abgaswerte messen</li>
-              <li>✓ 15-20 Minuten</li>
-              <li>✓ Gültig 1 Jahr</li>
-              <li>✓ Prüfbericht</li>
-            </ul>
+          <div className="home-service-card">
+            <div className="service-icon">
+              <FiTrendingUp size={40} />
+            </div>
+            <h3>Abgasuntersuchung (AU)</h3>
+            <p>Überprüfung der Abgaswerte und Umweltverträglichkeit Ihres Fahrzeugs.</p>
           </div>
+        </div>
+        <div className="home-services-cta">
+          <button className="btn btn-primary" onClick={handleDiscoverServices}>
+            Alle Leistungen ansehen
+          </button>
         </div>
       </div>
 
@@ -315,7 +313,7 @@ export const Home: FunctionComponent<Partial<Company>> = ({
       <div className="map-section">
         <h2>Unser Standort</h2>
         <p className="subtitle">
-          Finden Sie uns in der Innenstadt - gut erreichbar mit dem Auto und
+          Finden Sie uns in {address?.city} – gut erreichbar mit dem Auto und
           öffentlichen Verkehrsmitteln
         </p>
         <GoogleMap

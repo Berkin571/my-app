@@ -216,23 +216,32 @@ body {
 .sidebar {
   position: fixed;
   top: 0;
+  bottom: 0;
   left: -100%;
   width: var(--sidebar-width);
-  height: 100vh; /* Full device height on mobile */
+  height: 100vh; /* Fallback */
+  height: 100dvh; /* Modern mobile browsers: full dynamic viewport height */
   background: var(--text-light);
   border-right: 1px solid var(--border-color);
   box-shadow: var(--shadow-lg);
   z-index: 1005; /* Above overlay */
   transition: var(--transition);
   overflow-y: auto;
-  margin-top: 0; /* Remove offset to truly cover full height */
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
+  margin-top: 0.3rem; /* Remove offset to truly cover full height */
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 @media (max-width: 700px) {
   .sidebar {
-    height: 100vh; /* Ensure small phones also use full height */
+    height: 100vh; /* Fallback */
+    height: 100dvh; /* Ensure small phones use full dynamic height */
+  }
+}
+
+@supports (height: 100dvh) {
+  .sidebar {
+    height: 100dvh;
   }
 }
 
@@ -369,14 +378,20 @@ body {
   gap: 1.5rem;
 }
 
-.footer-right a {
+.footer-right a,
+.footer-right button {
   color: var(--text-secondary);
   text-decoration: none;
   font-size: 0.875rem;
   transition: var(--transition);
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
 }
 
-.footer-right a:hover {
+.footer-right a:hover,
+.footer-right button:hover {
   color: var(--primary-color);
 }
 

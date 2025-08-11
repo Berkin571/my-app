@@ -1,4 +1,5 @@
 import type { FunctionComponent } from "react";
+import type { Company } from "../types";
 import { useState } from "react";
 import { FiChevronDown, FiHelpCircle, FiPhone, FiMail, FiMapPin } from "react-icons/fi";
 import "./FAQ.css";
@@ -10,7 +11,7 @@ interface FAQItem {
   category: string;
 }
 
-export const FAQ: FunctionComponent = () => {
+export const FAQ: FunctionComponent<Partial<Company>> = ({ phone, email, address }) => {
   const [openItems, setOpenItems] = useState<number[]>([]);
   const [activeCategory, setActiveCategory] = useState<string>("alle");
 
@@ -199,21 +200,23 @@ export const FAQ: FunctionComponent = () => {
             <FiPhone size={24} />
             <div>
               <h3>Telefon</h3>
-              <p>030 12345678</p>
+              <p>{phone}</p>
             </div>
           </div>
           <div className="contact-method">
             <FiMail size={24} />
             <div>
               <h3>E-Mail</h3>
-              <p>info@kfz-pruefstelle.de</p>
+              <p>{email}</p>
             </div>
           </div>
           <div className="contact-method">
             <FiMapPin size={24} />
             <div>
               <h3>Vorbeikommen</h3>
-              <p>Kommen Sie einfach vorbei - ohne Termin!</p>
+              <p>
+                {address?.street} {address?.houseNumber}, {address?.zip} {address?.city}
+              </p>
             </div>
           </div>
         </div>

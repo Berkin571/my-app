@@ -1,8 +1,13 @@
 import type { FunctionComponent } from "react";
+import type { Company } from "../types";
 import { FiTool, FiStar, FiTrendingUp, FiCheck, FiTruck, FiUser } from "react-icons/fi";
 import "./Leistungen.css";
 
-export const Leistungen: FunctionComponent = () => {
+export const Leistungen: FunctionComponent<Partial<Company>> = ({
+  phone,
+  email,
+  address,
+}) => {
   // Button action functions
   const handleComeNow = () => {
     // Scroll to top and show a message about coming without appointment
@@ -19,27 +24,36 @@ export const Leistungen: FunctionComponent = () => {
   };
 
   const handleCall = () => {
-    // Open phone dialer
-    window.open("tel:+49123456789", "_self");
+    if (phone) {
+      window.open(`tel:${phone}`, "_self");
+    }
   };
 
   const handleEmail = () => {
-    // Open email client
     const subject = encodeURIComponent("Anfrage zu Leistungen");
     const body = encodeURIComponent(
       "Guten Tag,\n\nich interessiere mich für Ihre Leistungen.\n\nMit freundlichen Grüßen"
     );
-    window.open(
-      "mailto:info@example.com?subject=" + subject + "&body=" + body,
-      "_self"
-    );
+    if (email) {
+      window.open(`mailto:${email}?subject=${subject}&body=${body}`, "_self");
+    }
   };
 
   const handleGetDirections = () => {
-    // Open Google Maps with directions
-    const url =
-      "https://www.google.com/maps/dir/?api=1&destination=48.1351,11.5820";
-    window.open(url, "_blank");
+    // Open Google Maps with directions using company coordinates or address
+    let destination = "";
+    if (address?.latitude && address?.longitude) {
+      destination = `${address.latitude},${address.longitude}`;
+    } else if (address?.street && address?.city) {
+      const addrString = `${address.street} ${address.houseNumber ?? ""}, ${
+        address.zip ?? ""
+      } ${address.city}`.trim();
+      destination = encodeURIComponent(addrString);
+    }
+    if (destination) {
+      const url = `https://www.google.com/maps/dir/?api=1&destination=${destination}`;
+      window.open(url, "_blank");
+    }
   };
 
   return (
@@ -68,10 +82,6 @@ export const Leistungen: FunctionComponent = () => {
               <div className="service-detail">
                 <span className="detail-label">Dauer:</span>
                 <span className="detail-value">30-45 Minuten</span>
-              </div>
-              <div className="service-detail">
-                <span className="detail-label">Preis:</span>
-                <span className="detail-value">120€</span>
               </div>
               <div className="service-detail">
                 <span className="detail-label">Gültigkeit:</span>
@@ -110,15 +120,11 @@ export const Leistungen: FunctionComponent = () => {
             </p>
             <div className="service-details">
               <div className="service-detail">
-                <span className="detail-label">Dauer:</span>
+                <span className="detail-label-red">Dauer:</span>
                 <span className="detail-value">45-60 Minuten</span>
               </div>
               <div className="service-detail">
-                <span className="detail-label">Preis:</span>
-                <span className="detail-value">180€</span>
-              </div>
-              <div className="service-detail">
-                <span className="detail-label">Gültigkeit:</span>
+                <span className="detail-label-red">Gültigkeit:</span>
                 <span className="detail-value">2 Jahre (Pkw)</span>
               </div>
             </div>
@@ -158,10 +164,6 @@ export const Leistungen: FunctionComponent = () => {
                 <span className="detail-value">15-20 Minuten</span>
               </div>
               <div className="service-detail">
-                <span className="detail-label">Preis:</span>
-                <span className="detail-value">50€</span>
-              </div>
-              <div className="service-detail">
                 <span className="detail-label">Gültigkeit:</span>
                 <span className="detail-value">1 Jahr</span>
               </div>
@@ -198,7 +200,6 @@ export const Leistungen: FunctionComponent = () => {
             </div>
             <h3>Nachprüfung</h3>
             <p>Erneute Prüfung nach Mängelbehebung</p>
-            <span className="price">15,00€</span>
             <button className="btn btn-danger btn-small" onClick={handleCall}>
               Buchen
             </button>
@@ -210,7 +211,6 @@ export const Leistungen: FunctionComponent = () => {
             </div>
             <h3>Prüfbericht</h3>
             <p>Detaillierter Prüfbericht mit Fotos</p>
-            <span className="price">5,00€</span>
             <button className="btn btn-danger btn-small" onClick={handleCall}>
               Bestellen
             </button>
@@ -234,7 +234,6 @@ export const Leistungen: FunctionComponent = () => {
             </div>
             <h3>Express-Service</h3>
             <p>Prüfung innerhalb von 15 Minuten</p>
-            <span className="price">+10,00€</span>
             <button className="btn btn-danger btn-small" onClick={handleCall}>
               Express
             </button>
