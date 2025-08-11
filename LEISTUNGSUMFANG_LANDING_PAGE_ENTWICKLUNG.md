@@ -2,10 +2,10 @@
 
 ## 3 identische Websites für KFZ-Prüfstellen
 
-**Freiberufler:** [Ihr Name]  
-**Kunde:** [Name des Kunden]
+**Freiberufler:**
+**Kunde:**
 **Projekt:** Responsive Landing Page  
-**Datum:** [Aktuelles Datum]
+**Datum:**
 
 ---
 
@@ -40,7 +40,6 @@ Entwicklung einer modernen, responsiven Landing Page für KÜS Moosburg mit Foku
 #### 2. **Leistungen-Seite**
 
 - **Detaillierte Service-Beschreibungen**
-- **Preisübersicht** mit allen Leistungen
 - **Zusatzleistungen**
 - **Fahrzeugtypen-Übersicht**
 - **Service-Merkmale**
@@ -84,13 +83,12 @@ Entwicklung einer modernen, responsiven Landing Page für KÜS Moosburg mit Foku
 
 - **Optimierte Ladezeiten**
 - **SEO-freundliche Struktur**
-- **Meta-Tags** und Open Graph
 - **Strukturierte Daten** (Schema.org)
 
 ### ✅ **Content & Assets**
 
 - **Responsive Bildslider** mit 4 professionellen Bildern
-- **Icon-Integration** (SVG Icons)
+- **Icon-Integration** (React Icons)
 - **Strukturierte Daten** für alle Services
 - **Kontaktinformationen** Integration
 - **Google Maps** Einbindung
@@ -135,15 +133,12 @@ Entwicklung einer modernen, responsiven Landing Page für KÜS Moosburg mit Foku
 - **Chrome** (neueste Version)
 - **Firefox** (neueste Version)
 - **Safari** (neueste Version)
-- **Edge** (neueste Version)
 - **Mobile Browser** (iOS Safari, Chrome Mobile)
 
 ### **Performance-Ziele**
 
 - **Ladezeit:** < 3 Sekunden
-- **Lighthouse Score:** > 90
 - **Mobile-freundlich:** 100%
-- **Accessibility:** WCAG 2.1 AA
 
 ---
 
@@ -184,7 +179,6 @@ Entwicklung einer modernen, responsiven Landing Page für KÜS Moosburg mit Foku
 - [ ] Cross-Browser Testing
 - [ ] Mobile Testing
 - [ ] Performance-Optimierung
-- [ ] SEO-Optimierung
 
 ### **Phase 6: Deployment & Übergabe** (1 Tag)
 
@@ -227,11 +221,11 @@ Entwicklung einer modernen, responsiven Landing Page für KÜS Moosburg mit Foku
 
 ## Preise & Konditionen
 
-### **Gesamtpreis:** 1500-2000 €
+### **Gesamtpreis:** 2000 €
 
 **Zahlungsplan:**
 
-- 800 € bei Projektstart
+- 1000 € bei Projektstart
 - Restbetrag bei Projektabschluss
 
 ### **Inklusive Leistungen:**
@@ -270,9 +264,9 @@ Entwicklung einer modernen, responsiven Landing Page für KÜS Moosburg mit Foku
 
 ## Projektzeitplan
 
-**Gesamtdauer:** Bis zu 4 Wochen
-**Start:** [Datum nach Auftragsbestätigung]  
-**Fertigstellung:** [Datum + 2-3 Wochen]
+**Gesamtdauer:**
+**Start:**
+**Fertigstellung:**
 
 ---
 
@@ -288,7 +282,6 @@ Entwicklung einer modernen, responsiven Landing Page für KÜS Moosburg mit Foku
 
 ### **Performance**
 
-- ✅ Lighthouse Score > 90
 - ✅ Optimierte Bilder
 - ✅ Lazy Loading
 - ✅ Minimierte CSS/JS
@@ -296,8 +289,6 @@ Entwicklung einer modernen, responsiven Landing Page für KÜS Moosburg mit Foku
 
 ### **Accessibility**
 
-- ✅ WCAG 2.1 AA Konformität
-- ✅ Screen Reader kompatibel
 - ✅ Keyboard Navigation
 - ✅ Alt-Tags für Bilder
 - ✅ Kontrast-Verhältnisse
@@ -343,17 +334,17 @@ Entwicklung einer modernen, responsiven Landing Page für KÜS Moosburg mit Foku
 ## Unterschriften
 
 **Freiberufler:**  
-Name: \***\*\*\*\*\*\*\***\_\***\*\*\*\*\*\*\***  
-Datum: \***\*\*\*\*\*\*\***\_\***\*\*\*\*\*\*\***  
-Unterschrift: \***\*\*\*\*\*\*\***\_\***\*\*\*\*\*\*\***
+Name:
+Datum:
+Unterschrift:
 
 **Kunde:**  
-Name: \***\*\*\*\*\*\*\***\_\***\*\*\*\*\*\*\***  
-Datum: \***\*\*\*\*\*\*\***\_\***\*\*\*\*\*\*\***  
-Unterschrift: \***\*\*\*\*\*\*\***\_\***\*\*\*\*\*\*\***
+Name:
+Datum:
+Unterschrift:
 
 ---
 
-**Projekt-Referenz:** KÜS-Moosburg-Landing-Page-2024  
+**Projekt-Referenz:**
 **Version:** 1.0  
-**Datum:** [Aktuelles Datum]
+**Datum:**
