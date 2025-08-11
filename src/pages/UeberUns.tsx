@@ -1,5 +1,5 @@
 import type { FunctionComponent } from "react";
-import { FiCheck, FiStar, FiUser, FiPlus, FiAward } from "react-icons/fi";
+import { FiCheck, FiStar, FiUser, FiPlus } from "react-icons/fi";
 import "./UeberUns.css";
 import type { Company } from "../types";
 
@@ -133,36 +133,6 @@ export const UeberUns: FunctionComponent<Partial<Company>> = ({
               Spezialisiert auf moderne Fahrzeugtechnologien und
               Elektrofahrzeuge. Über 5 Jahre Erfahrung in der Prüfung.
             </p>
-          </div>
-        </div>
-      </div>
-
-      {/* Unsere Zertifizierungen */}
-      <div className="certifications-section">
-        <h2>Unsere Zertifizierungen</h2>
-        <div className="certifications-grid">
-          <div className="certification-card">
-            <div className="certification-icon">
-              <FiAward size={40} />
-            </div>
-            <h3>DEKRA Zertifizierung</h3>
-            <p>Offiziell anerkannte Prüfstelle</p>
-          </div>
-
-          <div className="certification-card">
-            <div className="certification-icon">
-              <FiAward size={40} />
-            </div>
-            <h3>TÜV Anerkennung</h3>
-            <p>Qualitätsstandards erfüllt</p>
-          </div>
-
-          <div className="certification-card">
-            <div className="certification-icon">
-              <FiAward size={40} />
-            </div>
-            <h3>ISO 9001</h3>
-            <p>Qualitätsmanagement zertifiziert</p>
           </div>
         </div>
       </div>
