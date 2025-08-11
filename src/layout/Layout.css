@@ -163,7 +163,7 @@ body {
 
 .header-left h1 {
   margin: 0;
-  font-size: 1.5rem;
+  font-size: var(--fs-xl);
   font-weight: 600;
   color: var(--text-primary);
 }
@@ -551,7 +551,7 @@ body {
   }
 
   .header-left h1 {
-    font-size: 1.25rem;
+    font-size: var(--fs-lg);
   }
 
   .main {

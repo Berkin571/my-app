@@ -18,7 +18,7 @@
 }
 
 .faq-header h1 {
-  font-size: 3rem;
+  font-size: var(--fs-2xl);
   font-weight: 700;
   margin-bottom: 1rem;
   background: linear-gradient(45deg, #1f2937, #374151);
@@ -28,7 +28,7 @@
 }
 
 .faq-header .subtitle {
-  font-size: 1.25rem;
+  font-size: var(--fs-lg);
   color: #4b5563;
   max-width: 600px;
   margin: 0 auto;
@@ -59,7 +59,7 @@
   border-radius: 25px;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-size: 0.875rem;
+  font-size: var(--fs-sm);
   font-weight: 500;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -108,7 +108,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 1.125rem;
+  font-size: var(--fs-lg);
   font-weight: 500;
   transition: all 0.3s ease;
 }
@@ -164,7 +164,7 @@
 }
 
 .no-results h3 {
-  font-size: 1.5rem;
+  font-size: var(--fs-xl);
   margin-bottom: 1rem;
   color: #1f2937;
 }
@@ -184,14 +184,14 @@
 
 .faq-contact h2 {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: var(--fs-2xl);
   margin-bottom: 1rem;
   color: #1f2937;
 }
 
 .faq-contact > p {
   text-align: center;
-  font-size: 1.125rem;
+  font-size: var(--fs-lg);
   margin-bottom: 3rem;
   color: #6b7280;
   max-width: 600px;

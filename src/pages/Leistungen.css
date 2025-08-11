@@ -33,7 +33,7 @@
 }
 
 .leistungen-header h1 {
-  font-size: 3rem;
+  font-size: var(--fs-2xl);
   font-weight: 700;
   margin-bottom: 1rem;
   background: linear-gradient(45deg, #1f2937, #374151);
@@ -43,7 +43,7 @@
 }
 
 .leistungen-header .subtitle {
-  font-size: 1.25rem;
+  font-size: var(--fs-lg);
   color: #4b5563;
   max-width: 600px;
   margin: 0 auto;
@@ -62,7 +62,7 @@
 
 .services-section h2 {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: var(--fs-2xl);
   margin-bottom: 3rem;
   color: #1f2937;
 }
@@ -129,7 +129,7 @@
 }
 
 .service-card h3 {
-  font-size: 1.5rem;
+  font-size: var(--fs-xl);
   font-weight: 600;
   margin-bottom: 1rem;
   color: #1f2937;
@@ -171,14 +171,14 @@
 
 .detail-label {
   display: block;
-  font-size: 0.875rem;
+  font-size: var(--fs-sm);
   color: #5d4d4d;
   margin-bottom: 0.25rem;
 }
 
 .detail-label-red {
   display: block;
-  font-size: 0.875rem;
+  font-size: var(--fs-sm);
   color: #f1f1f1;
   margin-bottom: 0.25rem;
 }
@@ -261,7 +261,7 @@
 
 .additional-services-section h2 {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: var(--fs-2xl);
   margin-bottom: 3rem;
   color: #1f2937;
 }
@@ -302,7 +302,7 @@
 }
 
 .additional-service-card h3 {
-  font-size: 1.25rem;
+  font-size: var(--fs-lg);
   margin-bottom: 0.5rem;
   color: #1f2937;
 }
@@ -314,7 +314,7 @@
 }
 
 .price {
-  font-size: 1.5rem;
+  font-size: var(--fs-xl);
   font-weight: 700;
   color: #ef4444;
   margin-bottom: 1rem;
@@ -350,7 +350,7 @@
 
 .vehicle-types-section h2 {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: var(--fs-2xl);
   margin-bottom: 3rem;
   color: #1f2937;
 }
@@ -391,14 +391,14 @@
 }
 
 .vehicle-type-card h3 {
-  font-size: 1.25rem;
+  font-size: var(--fs-lg);
   margin-bottom: 0.5rem;
   color: #1f2937;
 }
 
 .vehicle-type-card p {
   color: #6b7280;
-  font-size: 0.875rem;
+  font-size: var(--fs-sm);
 }
 
 /* Vehicle Types CTA */
@@ -420,13 +420,13 @@
 }
 
 .leistungen-cta h2 {
-  font-size: 2.5rem;
+  font-size: var(--fs-2xl);
   margin-bottom: 1rem;
   color: white;
 }
 
 .leistungen-cta p {
-  font-size: 1.125rem;
+  font-size: var(--fs-lg);
   margin-bottom: 2rem;
   color: rgba(255, 255, 255, 0.9);
   max-width: 600px;

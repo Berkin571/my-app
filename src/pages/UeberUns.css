@@ -18,7 +18,7 @@
 }
 
 .ueber-uns-header h1 {
-  font-size: 3rem;
+  font-size: var(--fs-2xl);
   font-weight: 700;
   margin-bottom: 1rem;
   background: linear-gradient(45deg, #1f2937, #374151);
@@ -28,7 +28,7 @@
 }
 
 .ueber-uns-header .subtitle {
-  font-size: 1.25rem;
+  font-size: var(--fs-lg);
   color: #4b5563;
   max-width: 600px;
   margin: 0 auto;
@@ -44,7 +44,7 @@
 
 .story-section h2 {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: var(--fs-2xl);
   margin-bottom: 3rem;
   color: #1f2937;
 }
@@ -62,7 +62,7 @@
   margin-bottom: 1.5rem;
   color: #6b7280;
   line-height: 1.8;
-  font-size: 1.125rem;
+  font-size: var(--fs-lg);
 }
 
 .story-stats {
@@ -108,7 +108,7 @@
 
 .values-section h2 {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: var(--fs-2xl);
   margin-bottom: 3rem;
   color: #1f2937;
 }
@@ -147,7 +147,7 @@
 }
 
 .value-card h3 {
-  font-size: 1.5rem;
+  font-size: var(--fs-xl);
   margin-bottom: 1rem;
   color: #1f2937;
 }
@@ -167,7 +167,7 @@
 
 .team-section h2 {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: var(--fs-2xl);
   margin-bottom: 3rem;
   color: #1f2937;
 }
@@ -206,13 +206,13 @@
 }
 
 .team-member h3 {
-  font-size: 1.5rem;
+  font-size: var(--fs-xl);
   margin-bottom: 0.5rem;
   color: #1f2937;
 }
 
 .member-role {
-  font-size: 1.125rem;
+  font-size: var(--fs-lg);
   color: #ef4444;
   margin-bottom: 1rem;
   font-weight: 600;
@@ -233,7 +233,7 @@
 
 .certifications-section h2 {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: var(--fs-2xl);
   margin-bottom: 3rem;
   color: #1f2937;
 }
@@ -272,14 +272,14 @@
 }
 
 .certification-card h3 {
-  font-size: 1.25rem;
+  font-size: var(--fs-lg);
   margin-bottom: 0.5rem;
   color: #1f2937;
 }
 
 .certification-card p {
   color: #6b7280;
-  font-size: 0.875rem;
+  font-size: var(--fs-sm);
 }
 
 /* Environment Section */
@@ -292,7 +292,7 @@
 
 .environment-section h2 {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: var(--fs-2xl);
   margin-bottom: 3rem;
   color: #1f2937;
 }
@@ -310,7 +310,7 @@
   margin-bottom: 1.5rem;
   color: #6b7280;
   line-height: 1.8;
-  font-size: 1.125rem;
+  font-size: var(--fs-lg);
 }
 
 .environment-list {
@@ -351,14 +351,14 @@
 }
 
 .env-stat-number {
-  font-size: 2.5rem;
+  font-size: var(--fs-2xl);
   font-weight: 700;
   color: #10b981;
   margin-bottom: 0.5rem;
 }
 
 .env-stat-label {
-  font-size: 0.875rem;
+  font-size: var(--fs-sm);
   color: #6b7280;
 }
 
@@ -372,13 +372,13 @@
 }
 
 .ueber-uns-cta h2 {
-  font-size: 2.5rem;
+  font-size: var(--fs-2xl);
   margin-bottom: 1rem;
   color: white;
 }
 
 .ueber-uns-cta p {
-  font-size: 1.125rem;
+  font-size: var(--fs-lg);
   margin-bottom: 2rem;
   color: rgba(255, 255, 255, 0.9);
   max-width: 600px;

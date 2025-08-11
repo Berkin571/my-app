@@ -100,7 +100,9 @@ export const Layout: FunctionComponent<Props> = ({ children, company }) => {
             >
               <FiMenu size={24} />
             </button>
-            <h1>{company.name}</h1>
+            <h1 onClick={() => navigate("/")} style={{ cursor: "pointer" }}>
+              {company.name}
+            </h1>
           </div>
           <div className="header-right">
             <button

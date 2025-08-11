@@ -415,13 +415,10 @@ export const Home: FunctionComponent<Partial<Company>> = ({
           Sie Ihr Fahrzeug prüfen.
         </p>
         <div className="cta-buttons">
-          <button
-            className="btn btn-secondary btn-large"
-            onClick={handleComeNow}
-          >
+          <button className="btn btn-primary btn-large" onClick={handleComeNow}>
             Jetzt vorbeikommen
           </button>
-          <p>oder</p>
+          <span className="cta-divider">oder</span>
           <div className="cta-buttons-2">
             <button className="btn btn-secondary" onClick={handleCall}>
               Anrufen

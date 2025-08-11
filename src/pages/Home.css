@@ -598,13 +598,13 @@
 }
 
 .cta-section h2 {
-  font-size: 2.5rem;
+  font-size: var(--fs-2xl);
   margin-bottom: 1rem;
   color: white;
 }
 
 .cta-section p {
-  font-size: 1.125rem;
+  font-size: var(--fs-lg);
   margin-bottom: 2rem;
   color: rgba(255, 255, 255, 0.9);
   max-width: 600px;
@@ -613,18 +613,18 @@
 }
 
 .cta-buttons {
-  display: flex;
-  gap: 1rem;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
+  align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .cta-buttons-2 {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: -2rem;
+  display: inline-grid;
+  grid-auto-flow: column;
+  gap: 0.75rem;
 }
 
 .cta-section .btn-secondary {
@@ -727,8 +727,24 @@
   }
 
   .cta-buttons {
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-auto-flow: row;
+    justify-items: center;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+
+  .cta-buttons .btn {
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .cta-buttons-2 {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    justify-items: stretch;
   }
 
   .price-card.featured {
@@ -790,6 +806,11 @@
 
   .price-card {
     padding: 1.5rem;
+  }
+
+  /* CTA: auf sehr kleinen Geräten sekundäre Buttons untereinander */
+  .cta-buttons-2 {
+    grid-template-columns: 1fr;
   }
 
   /* Smaller headings on very small screens */
