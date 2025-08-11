@@ -415,16 +415,18 @@ body {
   /* Sidebar becomes a full-width navigation bar under header */
   .sidebar {
     grid-area: nav;
-    position: static;
+    position: sticky;
+    top: calc(var(--location-bar-height) + var(--header-height));
     left: 0;
     width: 100%;
     height: auto;
     transform: none;
     box-shadow: var(--shadow-sm);
     border-right: none;
-    border-top: 1px solid var(--border-color);
+    border-top: none; /* Kein Abstand zwischen Header & Nav */
     border-bottom: 1px solid var(--border-color);
     background: var(--text-light);
+    z-index: 999; /* Unter dem Header, über dem Inhalt */
   }
 
   .sidebar-overlay {
@@ -565,7 +567,6 @@ body {
 
   /* Adjust sidebar for mobile with location bar */
   .sidebar {
-    
     z-index: 1005;
   }
 }
