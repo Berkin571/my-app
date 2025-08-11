@@ -14,6 +14,7 @@ import {
 } from "react-icons/fi";
 import "./Layout.css";
 import type { Company } from "../types";
+import logo from "../assets/kues_logo.svg";
 
 type Props = {
   company: Company;
@@ -100,9 +101,17 @@ export const Layout: FunctionComponent<Props> = ({ children, company }) => {
             >
               <FiMenu size={24} />
             </button>
-            <h1 onClick={() => navigate("/")} style={{ cursor: "pointer" }}>
-              {company.name}
-            </h1>
+            <img
+              style={{
+                width: "auto",
+                height: "40px",
+                cursor: "pointer",
+                marginLeft: "-0.5rem",
+              }}
+              onClick={() => navigate("/")}
+              src={logo}
+              alt="Logo"
+            />
           </div>
           <div className="header-right">
             <button
