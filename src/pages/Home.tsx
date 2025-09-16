@@ -14,6 +14,10 @@ import { GoogleMap } from "../components";
 import "./Home.css";
 import type { Company } from "../types";
 
+import pruefstelle from "../assets/kues-pruefstelle.jpeg";
+import unfall from "../assets/unfall.jpg";
+import kennzeichen from "../assets/kennzeichen.jpg";
+
 export const Home: FunctionComponent<Partial<Company>> = ({
   name,
   address,
@@ -27,33 +31,22 @@ export const Home: FunctionComponent<Partial<Company>> = ({
       id: 1,
       title: "KFZ-Hauptuntersuchung ohne Termin",
       subtitle: "Kommen Sie einfach vorbei - wir prüfen Ihr Fahrzeug sofort!",
-      image:
-        "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      image: pruefstelle,
       cta: "Jetzt vorbeikommen",
     },
     {
       id: 2,
       title: "Professionelle Fahrzeugprüfung",
       subtitle: "Erfahrene Prüfer, moderne Technik - für Ihre Sicherheit",
-      image:
-        "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80",
+      image: unfall,
       cta: "Preise ansehen",
     },
     {
       id: 3,
       title: "Schnell & Zuverlässig",
       subtitle: "Hauptuntersuchung in nur 30-45 Minuten",
-      image:
-        "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      image: kennzeichen,
       cta: "Mehr erfahren",
-    },
-    {
-      id: 4,
-      title: "Alle Fahrzeugtypen",
-      subtitle: "Pkw, Lkw, Busse und Anhänger - wir prüfen alles",
-      image:
-        "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-      cta: "Leistungen entdecken",
     },
   ];
 
