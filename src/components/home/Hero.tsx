@@ -1,5 +1,6 @@
 import type { FunctionComponent, ReactNode } from "react";
 import { GlobalRating } from "../google-components";
+import { FaGoogle } from "react-icons/fa";
 import "./Hero.css";
 
 export interface HeroProps {
@@ -26,6 +27,9 @@ export const Hero: FunctionComponent<HeroProps> = ({
           <h1 className="hero__title">{title}</h1>
           {ratingSummary && (
             <div className="hero__rating">
+              <span className="hero__google" aria-hidden="true">
+                <FaGoogle size={18} />
+              </span>
               <GlobalRating
                 ratingSummary={ratingSummary}
                 googleUrl={googleUrl}

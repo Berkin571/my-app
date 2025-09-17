@@ -1,14 +1,7 @@
 import type { FunctionComponent } from "react";
-import { useState, useEffect } from "react";
-import {
-  FiChevronLeft,
-  FiChevronRight,
-  FiClock,
-  FiPlus,
-  FiStar,
-  FiCheck,
-} from "react-icons/fi";
-import { GoogleMap, Leistungen, Hero } from "../components";
+import { useCallback } from "react";
+import { FiClock, FiPlus, FiStar } from "react-icons/fi";
+import { GoogleMap, Leistungen, Hero, HeroSlider, WhyUs } from "../components";
 
 import "./Home.css";
 import type { Company } from "../types";
@@ -24,8 +17,6 @@ export const Home: FunctionComponent<Partial<Company>> = ({
   phone,
   email,
 }) => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-
   const slides = [
     {
       id: 1,
@@ -50,35 +41,22 @@ export const Home: FunctionComponent<Partial<Company>> = ({
     },
   ];
 
-  useEffect(() => {
-    const interval = setInterval(
-      () => setCurrentSlide((prev) => (prev + 1) % slides.length),
-      5000
-    );
-    return () => clearInterval(interval);
-  }, [slides.length]);
-
-  const goToSlide = (index: number) => setCurrentSlide(index);
-  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % slides.length);
-  const prevSlide = () =>
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
-
   // Button action functions
-  const handleComeNow = () => {
+  const handleComeNow = useCallback(() => {
     const el = document.querySelector(".map-section");
     el?.scrollIntoView({ behavior: "smooth" });
-  };
-  const handleViewPrices = () => {
+  }, []);
+  const handleViewPrices = useCallback(() => {
     const el = document.querySelector(".prices-section");
     el?.scrollIntoView({ behavior: "smooth" });
-  };
-  const handleLearnMore = () => {
+  }, []);
+  const handleLearnMore = useCallback(() => {
     const el = document.querySelector(".why-us-section");
     el?.scrollIntoView({ behavior: "smooth" });
-  };
-  const handleDiscoverServices = () => {
+  }, []);
+  const handleDiscoverServices = useCallback(() => {
     window.location.href = "/leistungen";
-  };
+  }, []);
   const handleCall = () => {
     if (phone) window.open(`tel:${phone}`, "_self");
   };
@@ -88,60 +66,16 @@ export const Home: FunctionComponent<Partial<Company>> = ({
 
   return (
     <div className="home-page">
-      {/* Image Slider */}
-      <div className="slider-section">
-        <div className="slider-container">
-          {slides.map((slide, index) => (
-            <div
-              key={slide.id}
-              className={`slider-slide ${
-                index === currentSlide ? "active" : ""
-              }`}
-              style={{
-                backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(${slide.image})`,
-              }}
-            >
-              <div className="slider-content">
-                <h1 className="slider-title">{slide.title}</h1>
-                <p className="slider-subtitle">{slide.subtitle}</p>
-                <button
-                  className="slider-cta btn btn-danger btn-large"
-                  onClick={() => {
-                    if (slide.cta === "Jetzt vorbeikommen") handleComeNow();
-                    else if (slide.cta === "Preise ansehen") handleViewPrices();
-                    else if (slide.cta === "Mehr erfahren") handleLearnMore();
-                    else if (slide.cta === "Leistungen entdecken")
-                      handleDiscoverServices();
-                  }}
-                >
-                  {slide.cta}
-                </button>
-              </div>
-            </div>
-          ))}
-
-          {/* Navigation Arrows */}
-          <button className="slider-nav slider-prev" onClick={prevSlide}>
-            <FiChevronLeft size={24} />
-          </button>
-          <button className="slider-nav slider-next" onClick={nextSlide}>
-            <FiChevronRight size={24} />
-          </button>
-
-          {/* Dots Navigation */}
-          <div className="slider-dots">
-            {slides.map((_, index) => (
-              <button
-                key={index}
-                className={`slider-dot ${
-                  index === currentSlide ? "active" : ""
-                }`}
-                onClick={() => goToSlide(index)}
-              />
-            ))}
-          </div>
-        </div>
-      </div>
+      <HeroSlider
+        slides={slides}
+        autoMs={5000}
+        onCtaClick={(cta) => {
+          if (cta === "Jetzt vorbeikommen") handleComeNow();
+          else if (cta === "Preise ansehen") handleViewPrices();
+          else if (cta === "Mehr erfahren") handleLearnMore();
+          else if (cta === "Leistungen entdecken") handleDiscoverServices();
+        }}
+      />
 
       {/* Hero Section */}
       <Hero
@@ -201,52 +135,14 @@ export const Home: FunctionComponent<Partial<Company>> = ({
         ]}
       />
 
-      {/* Why Us Section */}
-      <div className="why-us-section">
-        <h2>Warum wir?</h2>
-        <div className="why-us-grid">
-          <div className="why-us-item">
-            <div className="why-us-icon">
-              <FiClock size={32} />
-            </div>
-            <h3>Ohne Termin</h3>
-            <p>
-              Keine Terminvereinbarung nötig. Kommen Sie einfach vorbei und
-              lassen Sie Ihr Fahrzeug prüfen.
-            </p>
-          </div>
-          <div className="why-us-item">
-            <div className="why-us-icon">
-              <FiPlus size={32} />
-            </div>
-            <h3>Schnell & Zuverlässig</h3>
-            <p>
-              Professionelle Prüfung in nur 30-45 Minuten. Wir sind schnell,
-              gründlich und zuverlässig.
-            </p>
-          </div>
-          <div className="why-us-item">
-            <div className="why-us-icon">
-              <FiStar size={32} />
-            </div>
-            <h3>Günstige Preise</h3>
-            <p>
-              Transparente Preise ohne versteckte Kosten. Abgasuntersuchung
-              bereits ab 50€.
-            </p>
-          </div>
-          <div className="why-us-item">
-            <div className="why-us-icon">
-              <FiCheck size={32} />
-            </div>
-            <h3>Erfahrene Prüfer</h3>
-            <p>
-              Unsere Prüfer sind zertifiziert und haben jahrelange Erfahrung in
-              der Fahrzeugprüfung.
-            </p>
-          </div>
-        </div>
-      </div>
+      {/* Google Reviews moved above Why Us */}
+      <GoogleRating
+        title="Das sagen unsere Kunden"
+        ratingSummary={{ rating: 4.9, count: 1243 }}
+        variant="contained"
+      />
+
+      <WhyUs />
 
       {/* Map Section */}
       <div className="map-section">
