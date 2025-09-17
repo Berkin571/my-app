@@ -7,16 +7,16 @@ import {
   FiPlus,
   FiStar,
   FiCheck,
-  FiTool,
-  FiTrendingUp,
 } from "react-icons/fi";
-import { GoogleMap } from "../components";
+import { GoogleMap, Leistungen, Hero } from "../components";
+
 import "./Home.css";
 import type { Company } from "../types";
 
 import pruefstelle from "../assets/kues-pruefstelle.jpeg";
 import unfall from "../assets/unfall.jpg";
 import kennzeichen from "../assets/kennzeichen.jpg";
+import { GoogleRating } from "../components";
 
 export const Home: FunctionComponent<Partial<Company>> = ({
   name,
@@ -51,65 +51,39 @@ export const Home: FunctionComponent<Partial<Company>> = ({
   ];
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 5000);
-
+    const interval = setInterval(
+      () => setCurrentSlide((prev) => (prev + 1) % slides.length),
+      5000
+    );
     return () => clearInterval(interval);
   }, [slides.length]);
 
-  const goToSlide = (index: number) => {
-    setCurrentSlide(index);
-  };
-
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
-  };
-
-  const prevSlide = () => {
+  const goToSlide = (index: number) => setCurrentSlide(index);
+  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % slides.length);
+  const prevSlide = () =>
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
-  };
 
   // Button action functions
   const handleComeNow = () => {
-    // Scroll to map section to show location
-    const mapSection = document.querySelector(".map-section");
-    if (mapSection) {
-      mapSection.scrollIntoView({ behavior: "smooth" });
-    }
+    const el = document.querySelector(".map-section");
+    el?.scrollIntoView({ behavior: "smooth" });
   };
-
   const handleViewPrices = () => {
-    // Scroll to prices section
-    const pricesSection = document.querySelector(".prices-section");
-    if (pricesSection) {
-      pricesSection.scrollIntoView({ behavior: "smooth" });
-    }
+    const el = document.querySelector(".prices-section");
+    el?.scrollIntoView({ behavior: "smooth" });
   };
-
   const handleLearnMore = () => {
-    // Scroll to why us section
-    const whyUsSection = document.querySelector(".why-us-section");
-    if (whyUsSection) {
-      whyUsSection.scrollIntoView({ behavior: "smooth" });
-    }
+    const el = document.querySelector(".why-us-section");
+    el?.scrollIntoView({ behavior: "smooth" });
   };
-
   const handleDiscoverServices = () => {
-    // Navigate to services page
     window.location.href = "/leistungen";
   };
-
   const handleCall = () => {
-    if (phone) {
-      window.open(`tel:${phone}`, "_self");
-    }
+    if (phone) window.open(`tel:${phone}`, "_self");
   };
-
   const handleEmail = () => {
-    if (email) {
-      window.open(`mailto:${email}`, "_self");
-    }
+    if (email) window.open(`mailto:${email}`, "_self");
   };
 
   return (
@@ -124,7 +98,7 @@ export const Home: FunctionComponent<Partial<Company>> = ({
                 index === currentSlide ? "active" : ""
               }`}
               style={{
-                backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${slide.image})`,
+                backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(${slide.image})`,
               }}
             >
               <div className="slider-content">
@@ -170,78 +144,62 @@ export const Home: FunctionComponent<Partial<Company>> = ({
       </div>
 
       {/* Hero Section */}
-      <div className="hero-section">
-        <h1>KFZ-Hauptuntersuchung ohne Termin</h1>
-        <p className="hero-subtitle">
-          Kommen Sie einfach vorbei - wir prüfen Ihr Fahrzeug sofort!
-        </p>
-        <div className="hero-features">
-          <div className="hero-feature">
-            <FiClock size={24} />
-            <span>Ohne Termin</span>
-          </div>
-          <div className="hero-feature">
-            <FiPlus size={24} />
-            <span>30-45 Minuten</span>
-          </div>
-          <div className="hero-feature">
-            <FiStar size={24} />
-            <span>Ab 50€</span>
-          </div>
-        </div>
-        <div className="hero-cta">
-          <button
-            className="btn btn-danger btn-large"
-            style={{ marginLeft: "1rem" }}
-            onClick={handleComeNow}
-          >
-            Jetzt vorbeikommen
-          </button>
-        </div>
-      </div>
+      <Hero
+        title="HU-Plakette fällig? Wir prüfen Ihr Fahrzeug sofort!"
+        subtitle="Kommen Sie gerne ohne Termin vorbei!"
+        ratingSummary={{ rating: 4.9, count: 1243 }}
+        primaryCta={{ label: "Jetzt vorbeikommen", onClick: handleComeNow }}
+        features={[
+          { icon: <FiClock size={20} />, label: "Ohne Termin" },
+          { icon: <FiPlus size={20} />, label: "30-45 Minuten" },
+          { icon: <FiStar size={20} />, label: "Ab 50€" },
+        ]}
+      />
 
-      {/* Services Teaser Section */}
-      <div className="home-services-section">
-        <h2>Unsere Leistungen</h2>
-        <div className="home-services-grid">
-          <div className="home-service-card">
-            <div className="service-icon">
-              <FiTool size={40} />
-            </div>
-            <h3>Hauptuntersuchung (HU)</h3>
-            <p>
-              Vollständige technische Überprüfung gemäß gesetzlichen Vorgaben.
-            </p>
-          </div>
-
-          <div className="home-service-card featured">
-            <div className="service-icon">
-              <FiStar size={40} />
-            </div>
-            <h3>Haupt- + Abgasuntersuchung</h3>
-            <p>
-              Kombinierte Prüfung für maximale Sicherheit und
-              Umweltverträglichkeit.
-            </p>
-          </div>
-
-          <div className="home-service-card">
-            <div className="service-icon">
-              <FiTrendingUp size={40} />
-            </div>
-            <h3>Abgasuntersuchung (AU)</h3>
-            <p>
-              Überprüfung der Abgaswerte und Umweltverträglichkeit Ihres
-              Fahrzeugs.
-            </p>
-          </div>
-        </div>
-        <div className="home-services-cta">
-          <button className="btn btn-primary" onClick={handleDiscoverServices}>
-            Alle Leistungen ansehen
-          </button>
-        </div>
-      </div>
+      <Leistungen
+        prescribed={[
+          {
+            title: "Hauptuntersuchung (HU)",
+            description:
+              "Vollständige technische Überprüfung gemäß gesetzlichen Vorgaben.",
+            legal: "Rechtsgrundlage: §29 StVZO (i. d. R. alle 2 Jahre)",
+            imageSrc: pruefstelle,
+          },
+          {
+            title: "Kfz-Eintragung",
+            description:
+              "Einzelabnahme und Änderungsabnahme für Umbauten und Anbauteile.",
+            legal: "Rechtsgrundlage: §19 Abs. 2 & 3 StVZO",
+            imageSrc: kennzeichen,
+          },
+          {
+            title: "Vollgutachten",
+            description:
+              "Begutachtung nach StVZO, z. B. bei Import ohne EG-Typgenehmigung.",
+            legal: "Rechtsgrundlage: §21 StVZO",
+            imageSrc: pruefstelle,
+          },
+        ]}
+        damage={[
+          {
+            title: "Unfallgutachten",
+            description:
+              "Schnelles, unabhängiges Gutachten für eine reibungslose Regulierung.",
+            imageSrc: unfall,
+          },
+          {
+            title: "Schadengutachten",
+            description:
+              "Dokumentation von Schäden – transparent und gerichtsfest.",
+            imageSrc: unfall,
+          },
+          {
+            title: "Gebrauchtwagenbewertung",
+            description: "Objektive Wertermittlung beim Kauf oder Verkauf.",
+            imageSrc: kennzeichen,
+          },
+        ]}
+      />
 
       {/* Why Us Section */}
       <div className="why-us-section">
@@ -290,40 +248,6 @@ export const Home: FunctionComponent<Partial<Company>> = ({
         </div>
       </div>
 
-      {/* Requirements Section */}
-      <div className="requirements-section">
-        <h2>Was Sie mitbringen müssen</h2>
-        <div className="requirements-grid">
-          <div className="requirement-item">
-            <div className="requirement-icon">
-              <FiCheck size={24} />
-            </div>
-            <div className="requirement-text">
-              <h3>Fahrzeugschein</h3>
-              <p>Zulassungsbescheinigung Teil I</p>
-            </div>
-          </div>
-          <div className="requirement-item">
-            <div className="requirement-icon">
-              <FiCheck size={24} />
-            </div>
-            <div className="requirement-text">
-              <h3>Personalausweis</h3>
-              <p>Des Fahrzeughalters</p>
-            </div>
-          </div>
-          <div className="requirement-item">
-            <div className="requirement-icon">
-              <FiCheck size={24} />
-            </div>
-            <div className="requirement-text">
-              <h3>Gültige HU</h3>
-              <p>Falls vorhanden</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* Map Section */}
       <div className="map-section">
         <h2>Unser Standort</h2>
@@ -339,7 +263,7 @@ export const Home: FunctionComponent<Partial<Company>> = ({
         />
       </div>
 
-      {/* Hours Section */}
+      {/* Öffnungszeiten */}
       <div className="hours-section">
         <div className="hours-content">
           <h2>Öffnungszeiten</h2>
@@ -363,6 +287,13 @@ export const Home: FunctionComponent<Partial<Company>> = ({
           </div>
         </div>
       </div>
+
+      {/* Google Reviews (ENTKOPPELT, ohne <style>, im Container gehalten) */}
+      <GoogleRating
+        title="Das sagen unsere Kunden"
+        ratingSummary={{ rating: 4.9, count: 1243 }}
+        variant="contained" /* auf "bleed" stellen für symmetrischen Full-Width-Einsatz */
+      />
 
       {/* FAQ Section */}
       <div className="faq-section">
