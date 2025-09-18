@@ -1,8 +1,8 @@
 import type { FunctionComponent } from "react";
 import { FiCheck, FiStar, FiUser, FiPlus } from "react-icons/fi";
 import "./UeberUns.css";
-import type { Company } from "../types";
-import { Page } from "../layout";
+import type { Company } from "../../types";
+import { Page } from "../../layout";
 
 export const UeberUns: FunctionComponent<Partial<Company>> = ({
   name,

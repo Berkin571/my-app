@@ -1,9 +1,9 @@
 import type { FunctionComponent } from "react";
 import { FiPhone, FiMail, FiMapPin, FiClock, FiTruck } from "react-icons/fi";
-import { GoogleMap } from "../components";
+import { GoogleMap } from "../../components";
 import "./Kontakt.css";
-import type { Company } from "../types";
-import { Page } from "../layout";
+import type { Company } from "../../types";
+import { Page } from "../../layout";
 
 export const Kontakt: FunctionComponent<Partial<Company>> = ({
   name,

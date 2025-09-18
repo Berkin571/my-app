@@ -1,5 +1,5 @@
 import type { FunctionComponent } from "react";
-import type { Company } from "../types";
+import type { Company } from "../../types";
 import {
   FiTool,
   FiStar,
@@ -9,7 +9,7 @@ import {
   FiUser,
 } from "react-icons/fi";
 import "./Leistungen.css";
-import { Page } from "../layout";
+import { Page } from "../../layout";
 
 export const Leistungen: FunctionComponent<Partial<Company>> = ({
   phone,

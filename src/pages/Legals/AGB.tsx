@@ -1,7 +1,7 @@
 import type { FunctionComponent } from "react";
-import type { Company } from "../types";
+import type { Company } from "../../types";
 import "./Legal.css";
-import { Page } from "../layout";
+import { Page } from "../../layout";
 
 export const AGB: FunctionComponent<Partial<Company>> = ({
   name,

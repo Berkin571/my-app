@@ -1,5 +1,5 @@
 import type { FunctionComponent } from "react";
-import type { Company } from "../types";
+import type { Company } from "../../types";
 import { useState } from "react";
 import {
   FiChevronDown,
@@ -8,8 +8,8 @@ import {
   FiMail,
   FiMapPin,
 } from "react-icons/fi";
-import "./FAQ.css";
-import { Page } from "../layout";
+import "./Faq.css";
+import { Page } from "../../layout";
 
 interface FAQItem {
   id: number;

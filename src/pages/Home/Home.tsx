@@ -1,15 +1,20 @@
-import type { FunctionComponent } from "react";
-import { useCallback } from "react";
+import { useCallback, type FunctionComponent } from "react";
 import { FiClock, FiPlus, FiStar } from "react-icons/fi";
-import { GoogleMap, Leistungen, Hero, HeroSlider, WhyUs } from "../components";
+import {
+  GoogleMap,
+  GoogleRating,
+  Leistungen,
+  Hero,
+  HeroSlider,
+  WhyUs,
+} from "../../components";
 
 import "./Home.css";
-import type { Company } from "../types";
+import type { Company } from "../../types";
 
-import pruefstelle from "../assets/kues-pruefstelle.jpeg";
-import unfall from "../assets/unfall.jpg";
-import kennzeichen from "../assets/kennzeichen.jpg";
-import { GoogleRating } from "../components";
+import pruefstelle from "../../assets/kues-pruefstelle.jpeg";
+import unfall from "../../assets/unfall.jpg";
+import kennzeichen from "../../assets/kennzeichen.jpg";
 
 export const Home: FunctionComponent<Partial<Company>> = ({
   name,
