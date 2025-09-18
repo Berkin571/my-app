@@ -1,6 +1,7 @@
 import type { FunctionComponent } from "react";
 import type { Company } from "../types";
 import "./Legal.css";
+import { Page } from "../layout";
 
 export const AGB: FunctionComponent<Partial<Company>> = ({
   name,
@@ -9,12 +10,10 @@ export const AGB: FunctionComponent<Partial<Company>> = ({
   phone,
 }) => {
   return (
-    <div className="legal-page">
-      <div className="legal-hero">
-        <h1>Allgemeine Geschäftsbedingungen (AGB)</h1>
-        <p className="subtitle">Regelungen für Leistungen und Zusammenarbeit</p>
-      </div>
-
+    <Page
+      title="Allgemeine Geschäftsbedingungen (AGB)"
+      subtitle="Regelungen für Leistungen und Zusammenarbeit"
+    >
       <div className="legal-layout">
         <div className="legal-content">
           <section className="legal-section" id="geltungsbereich">
@@ -173,6 +172,6 @@ export const AGB: FunctionComponent<Partial<Company>> = ({
           </ul>
         </aside>
       </div>
-    </div>
+    </Page>
   );
 };

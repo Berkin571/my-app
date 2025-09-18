@@ -3,6 +3,7 @@ import { FiPhone, FiMail, FiMapPin, FiClock, FiTruck } from "react-icons/fi";
 import { GoogleMap } from "../components";
 import "./Kontakt.css";
 import type { Company } from "../types";
+import { Page } from "../layout";
 
 export const Kontakt: FunctionComponent<Partial<Company>> = ({
   name,
@@ -11,14 +12,10 @@ export const Kontakt: FunctionComponent<Partial<Company>> = ({
   email,
 }) => {
   return (
-    <div className="kontakt-page">
-      <div className="kontakt-header">
-        <h1>Kontakt</h1>
-        <p className="subtitle">
-          Nehmen Sie Kontakt mit uns auf - wir sind für Sie da!
-        </p>
-      </div>
-
+    <Page
+      title="Kontakt"
+      subtitle="Nehmen Sie Kontakt mit uns auf - wir sind für Sie da!"
+    >
       {/* Kontakt-Informationen */}
       <div className="contact-info-section">
         <h2>So erreichen Sie uns</h2>
@@ -30,7 +27,9 @@ export const Kontakt: FunctionComponent<Partial<Company>> = ({
             <h3>Telefon</h3>
             <p className="contact-detail">
               {phone ? (
-                <a href={`tel:${phone}`} title="Anrufen">{phone}</a>
+                <a href={`tel:${phone}`} title="Anrufen">
+                  {phone}
+                </a>
               ) : (
                 phone
               )}
@@ -45,7 +44,9 @@ export const Kontakt: FunctionComponent<Partial<Company>> = ({
             <h3>E-Mail</h3>
             <p className="contact-detail">
               {email ? (
-                <a href={`mailto:${email}`} title="E-Mail schreiben">{email}</a>
+                <a href={`mailto:${email}`} title="E-Mail schreiben">
+                  {email}
+                </a>
               ) : (
                 email
               )}
@@ -97,8 +98,9 @@ export const Kontakt: FunctionComponent<Partial<Company>> = ({
           <div className="directions-info">
             <h3>Mit dem Auto</h3>
             <p>
-              Kostenlose Parkplätze direkt vor der Prüfstelle verfügbar.
-              Die Zufahrt befindet sich über {address?.street} {address?.houseNumber}.
+              Kostenlose Parkplätze direkt vor der Prüfstelle verfügbar. Die
+              Zufahrt befindet sich über {address?.street}{" "}
+              {address?.houseNumber}.
             </p>
             <div className="parking-info">
               <FiTruck size={20} />
@@ -109,7 +111,8 @@ export const Kontakt: FunctionComponent<Partial<Company>> = ({
           <div className="directions-info">
             <h3>Mit öffentlichen Verkehrsmitteln</h3>
             <p>
-              Nutzen Sie die nächstgelegenen Bus- und Bahnverbindungen nach {address?.city}.
+              Nutzen Sie die nächstgelegenen Bus- und Bahnverbindungen nach{" "}
+              {address?.city}.
             </p>
             <div className="public-transport">
               <div className="transport-option">
@@ -133,26 +136,11 @@ export const Kontakt: FunctionComponent<Partial<Company>> = ({
           longitude={address?.longitude ?? 0}
           zoom={15}
           title={name}
+          showDirections
+          addressText={`${address?.street ?? ""} ${
+            address?.houseNumber ?? ""
+          }, ${address?.zip ?? ""} ${address?.city ?? ""}`.trim()}
         />
-        <div style={{ marginTop: "0.75rem" }}>
-          <a
-            className="btn btn-secondary"
-            href={`https://www.google.com/maps/dir/?api=1&destination=${address?.latitude},${address?.longitude}`}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Route mit Google Maps
-          </a>
-          <a
-            className="btn"
-            style={{ marginLeft: "0.5rem" }}
-            href={`https://maps.apple.com/?daddr=${address?.latitude},${address?.longitude}`}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Route mit Apple Karten
-          </a>
-        </div>
       </div>
 
       {/* Kontaktformular */}
@@ -223,6 +211,6 @@ export const Kontakt: FunctionComponent<Partial<Company>> = ({
           </div>
         </div>
       </div>
-    </div>
+    </Page>
   );
 };

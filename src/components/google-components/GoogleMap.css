@@ -1,0 +1,140 @@
+.google-map-container {
+  margin: 2rem 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  background: white;
+}
+
+.google-map {
+  width: 100%;
+  height: 400px;
+  min-height: 300px; /* ensure visibility even if parent has constraints */
+  border-radius: 12px 12px 0 0;
+}
+
+.gm-map-wrapper {
+  position: relative;
+}
+
+.gm-loading,
+.gm-error {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.85),
+    rgba(255, 255, 255, 0.6)
+  );
+  color: #374151;
+  font-weight: 500;
+}
+
+.gm-spinner {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 3px solid #e5e7eb;
+  border-top-color: #ef4444;
+  animation: gm-spin 0.9s linear infinite;
+}
+
+@keyframes gm-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.map-info {
+  padding: 1.5rem;
+  background: white;
+  border-top: 1px solid #e5e7eb;
+  text-align: center;
+}
+
+.map-info h3 {
+  margin: 0 0 0.5rem 0;
+  color: #1f2937;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.map-info p {
+  margin: 0.25rem 0;
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+.map-address {
+  margin-top: 0.25rem;
+}
+
+.map-actions {
+  display: inline-grid;
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.gm-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.12s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.gm-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+.gm-btn-primary {
+  background: #ef4444;
+  color: #fff;
+}
+
+.gm-btn-primary:hover {
+  background: #dc2626;
+}
+
+.gm-btn-secondary {
+  background: #f3f4f6;
+  color: #111827;
+  border-color: #e5e7eb;
+}
+
+.gm-btn-secondary:hover {
+  background: #eceff3;
+}
+
+@media (max-width: 768px) {
+  .google-map {
+    height: 300px;
+  }
+  .map-info {
+    padding: 1rem;
+  }
+  .map-info h3 {
+    font-size: 1.125rem;
+  }
+  .map-actions {
+    display: grid;
+    grid-auto-flow: row;
+    justify-items: stretch;
+  }
+  .gm-btn {
+    width: 100%;
+  }
+}

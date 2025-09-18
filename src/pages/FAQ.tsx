@@ -1,8 +1,15 @@
 import type { FunctionComponent } from "react";
 import type { Company } from "../types";
 import { useState } from "react";
-import { FiChevronDown, FiHelpCircle, FiPhone, FiMail, FiMapPin } from "react-icons/fi";
+import {
+  FiChevronDown,
+  FiHelpCircle,
+  FiPhone,
+  FiMail,
+  FiMapPin,
+} from "react-icons/fi";
 import "./FAQ.css";
+import { Page } from "../layout";
 
 interface FAQItem {
   id: number;
@@ -11,7 +18,11 @@ interface FAQItem {
   category: string;
 }
 
-export const FAQ: FunctionComponent<Partial<Company>> = ({ phone, email, address }) => {
+export const FAQ: FunctionComponent<Partial<Company>> = ({
+  phone,
+  email,
+  address,
+}) => {
   const [openItems, setOpenItems] = useState<number[]>([]);
   const [activeCategory, setActiveCategory] = useState<string>("alle");
 
@@ -123,14 +134,10 @@ export const FAQ: FunctionComponent<Partial<Company>> = ({ phone, email, address
       : faqData.filter((item) => item.category === activeCategory);
 
   return (
-    <div className="faq-page">
-      <div className="faq-header">
-        <h1>Häufige Fragen</h1>
-        <p className="subtitle">
-          Finden Sie schnell Antworten auf Ihre Fragen zur Fahrzeugprüfung
-        </p>
-      </div>
-
+    <Page
+      title="Häufige Fragen"
+      subtitle="Finden Sie schnell Antworten auf Ihre Fragen zur Fahrzeugprüfung"
+    >
       {/* Kategorie-Filter */}
       <div className="faq-categories">
         <div className="categories-grid">
@@ -215,12 +222,13 @@ export const FAQ: FunctionComponent<Partial<Company>> = ({ phone, email, address
             <div>
               <h3>Vorbeikommen</h3>
               <p>
-                {address?.street} {address?.houseNumber}, {address?.zip} {address?.city}
+                {address?.street} {address?.houseNumber}, {address?.zip}{" "}
+                {address?.city}
               </p>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </Page>
   );
 };

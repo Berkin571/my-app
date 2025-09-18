@@ -2,20 +2,17 @@ import type { FunctionComponent } from "react";
 import { FiCheck, FiStar, FiUser, FiPlus } from "react-icons/fi";
 import "./UeberUns.css";
 import type { Company } from "../types";
+import { Page } from "../layout";
 
 export const UeberUns: FunctionComponent<Partial<Company>> = ({
   name,
   address,
 }) => {
   return (
-    <div className="ueber-uns-page">
-      <div className="ueber-uns-header">
-        <h1>Über uns</h1>
-        <p className="subtitle">
-          Ihre zuverlässige {name} in {address?.city} seit 2003
-        </p>
-      </div>
-
+    <Page
+      title="Über uns"
+      subtitle={`Ihre zuverlässige ${name} in ${address?.city} seit 2003`}
+    >
       {/* Unsere Geschichte */}
       <div className="story-section">
         <h2>Unsere Geschichte</h2>
@@ -185,6 +182,6 @@ export const UeberUns: FunctionComponent<Partial<Company>> = ({
           <button className="btn btn-secondary">Kontakt aufnehmen</button>
         </div>
       </div>
-    </div>
+    </Page>
   );
 };

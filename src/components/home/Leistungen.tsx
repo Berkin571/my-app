@@ -69,7 +69,15 @@ export function Leistungen({
             <article className="svc-card" key={`p-${i}`}>
               {c.imageSrc ? (
                 <div className="svc-media">
-                  <img src={c.imageSrc} alt={c.title} loading="lazy" />
+                  <img
+                    src={c.imageSrc}
+                    alt={c.title}
+                    loading="lazy"
+                    decoding="async"
+                    width={1280}
+                    height={720}
+                    sizes="(max-width: 480px) 100vw, (max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
                 </div>
               ) : (
                 <div className="svc-media placeholder" aria-hidden>
@@ -106,7 +114,15 @@ export function Leistungen({
             <article className="svc-card" key={`d-${i}`}>
               {c.imageSrc ? (
                 <div className="svc-media">
-                  <img src={c.imageSrc} alt={c.title} loading="lazy" />
+                  <img
+                    src={c.imageSrc}
+                    alt={c.title}
+                    loading="lazy"
+                    decoding="async"
+                    width={1280}
+                    height={720}
+                    sizes="(max-width: 480px) 100vw, (max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
                 </div>
               ) : (
                 <div className="svc-media placeholder" aria-hidden>

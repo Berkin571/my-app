@@ -1,6 +1,7 @@
 import type { FunctionComponent } from "react";
 import type { Company } from "../types";
 import "./Legal.css";
+import { Page } from "../layout";
 
 export const Datenschutz: FunctionComponent<Partial<Company>> = ({
   name,
@@ -14,15 +15,16 @@ export const Datenschutz: FunctionComponent<Partial<Company>> = ({
   });
 
   return (
-    <div className="legal-page">
-      <div className="legal-hero">
-        <h1>Datenschutzerklärung</h1>
-        <p className="subtitle">
-          Informationen zur Verarbeitung Ihrer Daten auf dieser Website
-        </p>
-        <div className="legal-meta">Stand: {stand}</div>
+    <Page
+      title="Datenschutzerklärung"
+      subtitle="Informationen zur Verarbeitung Ihrer Daten auf dieser Website"
+    >
+      <div
+        className="legal-meta"
+        style={{ textAlign: "center", marginBottom: "1rem" }}
+      >
+        Stand: {stand}
       </div>
-
       <div className="legal-layout">
         <div className="legal-content">
           <section className="legal-section" id="verantwortlicher">
@@ -180,6 +182,6 @@ export const Datenschutz: FunctionComponent<Partial<Company>> = ({
           </ul>
         </aside>
       </div>
-    </div>
+    </Page>
   );
 };

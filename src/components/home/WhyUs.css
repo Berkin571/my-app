@@ -1,5 +1,5 @@
 .whyus {
-  padding: 4rem 2rem;
+  padding: 4rem var(--container-padding-x, 2rem);
   background: #fff;
   border-radius: 20px;
   margin: 2rem 0;
@@ -10,7 +10,7 @@
   margin-bottom: 2.5rem;
 }
 .whyus__title {
-  font-size: 2.25rem;
+  font-size: var(--fs-2xl, 2.25rem);
   margin: 0 0 0.5rem 0;
   color: #111827;
 }
@@ -23,7 +23,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1.25rem;
-  max-width: 1200px;
+  max-width: var(--container-max-width, 1200px);
   margin: 0 auto;
 }
 
@@ -59,6 +59,12 @@
 
 @media (max-width: 768px) {
   .whyus {
-    padding: 3rem 1.25rem;
+    padding: 3rem var(--container-padding-x, 1.25rem);
+  }
+}
+
+@media (min-width: 1280px) {
+  .whyus__grid {
+    gap: 1.5rem;
   }
 }

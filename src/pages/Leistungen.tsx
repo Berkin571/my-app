@@ -1,7 +1,15 @@
 import type { FunctionComponent } from "react";
 import type { Company } from "../types";
-import { FiTool, FiStar, FiTrendingUp, FiCheck, FiTruck, FiUser } from "react-icons/fi";
+import {
+  FiTool,
+  FiStar,
+  FiTrendingUp,
+  FiCheck,
+  FiTruck,
+  FiUser,
+} from "react-icons/fi";
 import "./Leistungen.css";
+import { Page } from "../layout";
 
 export const Leistungen: FunctionComponent<Partial<Company>> = ({
   phone,
@@ -57,14 +65,10 @@ export const Leistungen: FunctionComponent<Partial<Company>> = ({
   };
 
   return (
-    <div className="leistungen-page">
-      <div className="leistungen-header">
-        <h1>Unsere Leistungen</h1>
-        <p className="subtitle">
-          Professionelle Fahrzeugprüfungen und Prüfplaketten-Vergabe
-        </p>
-      </div>
-
+    <Page
+      title="Unsere Leistungen"
+      subtitle="Professionelle Fahrzeugprüfungen und Prüfplaketten-Vergabe"
+    >
       {/* Hauptleistungen */}
       <div className="services-section">
         <h2>Hauptleistungen</h2>
@@ -300,6 +304,6 @@ export const Leistungen: FunctionComponent<Partial<Company>> = ({
           </button>
         </div>
       </div>
-    </div>
+    </Page>
   );
 };
