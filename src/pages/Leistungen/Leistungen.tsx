@@ -1,15 +1,10 @@
 import type { FunctionComponent } from "react";
 import type { Company } from "../../types";
-import {
-  FiTool,
-  FiStar,
-  FiTrendingUp,
-  FiCheck,
-  FiTruck,
-  FiUser,
-} from "react-icons/fi";
+import { FiTool, FiStar, FiTrendingUp, FiCheck, FiUser } from "react-icons/fi";
+import { FaCar, FaTruck, FaBus, FaCaravan } from "react-icons/fa";
 import "./Leistungen.css";
 import { Page } from "../../layout";
+import { ServiceCard, InfoCard } from "../../components";
 
 export const Leistungen: FunctionComponent<Partial<Company>> = ({
   phone,
@@ -73,124 +68,127 @@ export const Leistungen: FunctionComponent<Partial<Company>> = ({
       <div className="services-section">
         <h2>Hauptleistungen</h2>
         <div className="services-grid">
-          <div className="service-card">
-            <div className="service-icon">
-              <FiTool size={48} />
-            </div>
-            <h3>Hauptuntersuchung (HU)</h3>
-            <p className="service-description">
-              Vollständige technische Überprüfung Ihres Fahrzeugs gemäß den
-              gesetzlichen Vorgaben.
-            </p>
-            <div className="service-details">
-              <div className="service-detail">
-                <span className="detail-label">Dauer:</span>
-                <span className="detail-value">30-45 Minuten</span>
-              </div>
-              <div className="service-detail">
-                <span className="detail-label">Gültigkeit:</span>
-                <span className="detail-value">2 Jahre (Pkw)</span>
-              </div>
-            </div>
-            <ul className="service-features">
-              <li>✓ Bremsenprüfung</li>
-              <li>✓ Beleuchtungsprüfung</li>
-              <li>✓ Achsen und Räder</li>
-              <li>✓ Karosserie und Fahrwerk</li>
-              <li>✓ Motormanagement</li>
-              <li>✓ Prüfplakette</li>
-            </ul>
-            <div className="service-actions">
-              <button className="btn btn-danger btn-small" onClick={handleCall}>
-                Anrufen
-              </button>
-              <button
-                className="btn btn-secondary btn-small"
-                onClick={handleEmail}
-              >
-                Anfrage
-              </button>
-            </div>
-          </div>
+          <ServiceCard
+            icon={<FiTool size={28} />}
+            title="Hauptuntersuchung (HU)"
+            description={
+              <p>
+                Vollständige technische Überprüfung Ihres Fahrzeugs gemäß den
+                gesetzlichen Vorgaben.
+              </p>
+            }
+            details={[
+              { label: "Dauer:", value: "30-45 Minuten" },
+              { label: "Gültigkeit:", value: "2 Jahre (Pkw)" },
+            ]}
+            features={[
+              "✓ Bremsenprüfung",
+              "✓ Beleuchtungsprüfung",
+              "✓ Achsen und Räder",
+              "✓ Karosserie und Fahrwerk",
+              "✓ Motormanagement",
+              "✓ Prüfplakette",
+            ]}
+            actions={
+              <>
+                <button
+                  className="btn btn-danger btn-small"
+                  onClick={handleCall}
+                >
+                  Anrufen
+                </button>
+                <button
+                  className="btn btn-secondary btn-small"
+                  onClick={handleEmail}
+                >
+                  Anfrage
+                </button>
+              </>
+            }
+          />
 
-          <div className="service-card featured">
-            <div className="service-icon">
-              <FiStar size={48} />
-            </div>
-            <h3>Haupt- + Abgasuntersuchung</h3>
-            <p className="service-description">
-              Kombinierte Prüfung für maximale Sicherheit und
-              Umweltverträglichkeit.
-            </p>
-            <div className="service-details">
-              <div className="service-detail">
-                <span className="detail-label-red">Dauer:</span>
-                <span className="detail-value">45-60 Minuten</span>
-              </div>
-              <div className="service-detail">
-                <span className="detail-label-red">Gültigkeit:</span>
-                <span className="detail-value">2 Jahre (Pkw)</span>
-              </div>
-            </div>
-            <ul className="service-features">
-              <li>✓ Alle HU-Leistungen</li>
-              <li>✓ Abgaswerte prüfen</li>
-              <li>✓ Lambda-Sonde</li>
-              <li>✓ Katalysator</li>
-              <li>✓ Abgasreinigung</li>
-              <li>✓ Prüfplakette</li>
-            </ul>
-            <div className="service-actions">
-              <button className="btn btn-danger btn-small" onClick={handleCall}>
-                Anrufen
-              </button>
-              <button
-                className="btn btn-secondary btn-small"
-                onClick={handleEmail}
-              >
-                Anfrage
-              </button>
-            </div>
-          </div>
+          <ServiceCard
+            featured
+            badge="Empfohlen"
+            icon={<FiStar size={28} />}
+            title="Haupt- + Abgasuntersuchung"
+            description={
+              <p>
+                Kombinierte Prüfung für maximale Sicherheit und
+                Umweltverträglichkeit.
+              </p>
+            }
+            details={[
+              { label: "Dauer:", value: "45-60 Minuten", emphasizeLabel: true },
+              {
+                label: "Gültigkeit:",
+                value: "2 Jahre (Pkw)",
+                emphasizeLabel: true,
+              },
+            ]}
+            features={[
+              "✓ Alle HU-Leistungen",
+              "✓ Abgaswerte prüfen",
+              "✓ Lambda-Sonde",
+              "✓ Katalysator",
+              "✓ Abgasreinigung",
+              "✓ Prüfplakette",
+            ]}
+            actions={
+              <>
+                <button
+                  className="btn btn-danger btn-small"
+                  onClick={handleCall}
+                >
+                  Anrufen
+                </button>
+                <button
+                  className="btn btn-secondary btn-small"
+                  onClick={handleEmail}
+                >
+                  Anfrage
+                </button>
+              </>
+            }
+          />
 
-          <div className="service-card">
-            <div className="service-icon">
-              <FiTrendingUp size={48} />
-            </div>
-            <h3>Abgasuntersuchung (AU)</h3>
-            <p className="service-description">
-              Überprüfung der Abgaswerte und Umweltverträglichkeit Ihres
-              Fahrzeugs.
-            </p>
-            <div className="service-details">
-              <div className="service-detail">
-                <span className="detail-label">Dauer:</span>
-                <span className="detail-value">15-20 Minuten</span>
-              </div>
-              <div className="service-detail">
-                <span className="detail-label">Gültigkeit:</span>
-                <span className="detail-value">1 Jahr</span>
-              </div>
-            </div>
-            <ul className="service-features">
-              <li>✓ Abgaswerte messen</li>
-              <li>✓ Lambda-Sonde prüfen</li>
-              <li>✓ Katalysator testen</li>
-              <li>✓ Abgasreinigung</li>
-              <li>✓ Prüfbericht</li>
-            </ul>
-            <div className="service-actions">
-              <button className="btn btn-danger btn-small" onClick={handleCall}>
-                Anrufen
-              </button>
-              <button
-                className="btn btn-secondary btn-small"
-                onClick={handleEmail}
-              >
-                Anfrage
-              </button>
-            </div>
-          </div>
+          <ServiceCard
+            icon={<FiTrendingUp size={28} />}
+            title="Abgasuntersuchung (AU)"
+            description={
+              <p>
+                Überprüfung der Abgaswerte und Umweltverträglichkeit Ihres
+                Fahrzeugs.
+              </p>
+            }
+            details={[
+              { label: "Dauer:", value: "15-20 Minuten" },
+              { label: "Gültigkeit:", value: "1 Jahr" },
+            ]}
+            features={[
+              "✓ Abgaswerte messen",
+              "✓ Lambda-Sonde prüfen",
+              "✓ Katalysator testen",
+              "✓ Abgasreinigung",
+              "✓ Prüfbericht",
+            ]}
+            actions={
+              <>
+                <button
+                  className="btn btn-danger btn-small"
+                  onClick={handleCall}
+                >
+                  Anrufen
+                </button>
+                <button
+                  className="btn btn-secondary btn-small"
+                  onClick={handleEmail}
+                >
+                  Anfrage
+                </button>
+              </>
+            }
+          />
         </div>
       </div>
 
@@ -198,50 +196,43 @@ export const Leistungen: FunctionComponent<Partial<Company>> = ({
       <div className="additional-services-section">
         <h2>Zusatzleistungen</h2>
         <div className="additional-services-grid">
-          <div className="additional-service-card">
-            <div className="additional-service-icon">
-              <FiCheck size={32} />
-            </div>
-            <h3>Nachprüfung</h3>
+          <InfoCard size="sm" icon={<FiCheck size={20} />} title="Nachprüfung">
             <p>Erneute Prüfung nach Mängelbehebung</p>
-            <button className="btn btn-danger btn-small" onClick={handleCall}>
-              Buchen
-            </button>
-          </div>
-
-          <div className="additional-service-card">
-            <div className="additional-service-icon">
-              <FiTool size={32} />
+            <div className="card-actions">
+              <button className="btn btn-danger btn-small" onClick={handleCall}>
+                Buchen
+              </button>
             </div>
-            <h3>Prüfbericht</h3>
+          </InfoCard>
+          <InfoCard size="sm" icon={<FiTool size={20} />} title="Prüfbericht">
             <p>Detaillierter Prüfbericht mit Fotos</p>
-            <button className="btn btn-danger btn-small" onClick={handleCall}>
-              Bestellen
-            </button>
-          </div>
-
-          <div className="additional-service-card">
-            <div className="additional-service-icon">
-              <FiUser size={32} />
+            <div className="card-actions">
+              <button className="btn btn-danger btn-small" onClick={handleCall}>
+                Bestellen
+              </button>
             </div>
-            <h3>Beratung</h3>
+          </InfoCard>
+          <InfoCard size="sm" icon={<FiUser size={20} />} title="Beratung">
             <p>Technische Beratung zu Mängeln</p>
             <span className="price">Kostenlos</span>
-            <button className="btn btn-danger btn-small" onClick={handleCall}>
-              Beratung
-            </button>
-          </div>
-
-          <div className="additional-service-card">
-            <div className="additional-service-icon">
-              <FiTrendingUp size={32} />
+            <div className="card-actions">
+              <button className="btn btn-danger btn-small" onClick={handleCall}>
+                Beratung
+              </button>
             </div>
-            <h3>Express-Service</h3>
+          </InfoCard>
+          <InfoCard
+            size="sm"
+            icon={<FiTrendingUp size={20} />}
+            title="Express-Service"
+          >
             <p>Prüfung innerhalb von 15 Minuten</p>
-            <button className="btn btn-danger btn-small" onClick={handleCall}>
-              Express
-            </button>
-          </div>
+            <div className="card-actions">
+              <button className="btn btn-danger btn-small" onClick={handleCall}>
+                Express
+              </button>
+            </div>
+          </InfoCard>
         </div>
       </div>
 
@@ -249,43 +240,41 @@ export const Leistungen: FunctionComponent<Partial<Company>> = ({
       <div className="vehicle-types-section">
         <h2>Für alle Fahrzeugtypen</h2>
         <div className="vehicle-types-grid">
-          <div className="vehicle-type-card">
-            <div className="vehicle-type-icon">
-              <FiTruck size={40} />
-            </div>
-            <h3>Pkw</h3>
+          <InfoCard
+            size="sm"
+            accent="gray"
+            icon={<FaCar size={20} color="gray" />}
+            title="Pkw"
+          >
             <p>Personenkraftwagen aller Klassen</p>
-          </div>
-
-          <div className="vehicle-type-card">
-            <div className="vehicle-type-icon">
-              <FiTruck size={40} />
-            </div>
-            <h3>Lkw</h3>
+          </InfoCard>
+          <InfoCard
+            size="sm"
+            accent="gray"
+            icon={<FaTruck size={20} color="gray" />}
+            title="Lkw"
+          >
             <p>Lastkraftwagen und Transporter</p>
-          </div>
-
-          <div className="vehicle-type-card">
-            <div className="vehicle-type-icon">
-              <FiTruck size={40} />
-            </div>
-            <h3>Busse</h3>
+          </InfoCard>
+          <InfoCard
+            size="sm"
+            accent="gray"
+            icon={<FaBus size={20} color="gray" />}
+            title="Busse"
+          >
             <p>Busse und Kleinbusse</p>
-          </div>
-
-          <div className="vehicle-type-card">
-            <div className="vehicle-type-icon">
-              <FiTruck size={40} />
-            </div>
-            <h3>Anhänger</h3>
+          </InfoCard>
+          <InfoCard
+            size="sm"
+            accent="gray"
+            icon={<FaCaravan size={20} color="gray" />}
+            title="Anhänger"
+          >
             <p>Anhänger und Wohnwagen</p>
-          </div>
+          </InfoCard>
         </div>
         <div className="vehicle-types-cta">
-          <button
-            className="btn btn-primary btn-large"
-            onClick={handleGetDirections}
-          >
+          <button className="btn btn-primary" onClick={handleGetDirections}>
             Standort finden
           </button>
         </div>
@@ -296,7 +285,7 @@ export const Leistungen: FunctionComponent<Partial<Company>> = ({
         <h2>Fahrzeug zur Prüfung bringen?</h2>
         <p>Kommen Sie einfach vorbei - ohne Termin!</p>
         <div className="cta-buttons">
-          <button className="btn btn-primary btn-large" onClick={handleComeNow}>
+          <button className="btn btn-primary" onClick={handleComeNow}>
             Jetzt vorbeikommen
           </button>
           <button className="btn btn-secondary" onClick={handleViewPrices}>

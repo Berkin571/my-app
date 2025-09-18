@@ -1,6 +1,6 @@
 import type { FunctionComponent } from "react";
-import { FiPhone, FiMail, FiMapPin, FiClock, FiTruck } from "react-icons/fi";
-import { GoogleMap } from "../../components";
+import { FiPhone, FiMail, FiMapPin, FiClock } from "react-icons/fi";
+import { GoogleMap, ContactCard } from "../../components";
 import "./Kontakt.css";
 import type { Company } from "../../types";
 import { Page } from "../../layout";
@@ -20,111 +20,64 @@ export const Kontakt: FunctionComponent<Partial<Company>> = ({
       <div className="contact-info-section">
         <h2>So erreichen Sie uns</h2>
         <div className="contact-info-grid">
-          <div className="contact-info-card">
-            <div className="contact-icon">
-              <FiPhone size={32} />
-            </div>
-            <h3>Telefon</h3>
-            <p className="contact-detail">
-              {phone ? (
+          <ContactCard
+            title="Telefon"
+            icon={<FiPhone size={24} />}
+            detail={
+              phone ? (
                 <a href={`tel:${phone}`} title="Anrufen">
                   {phone}
                 </a>
               ) : (
                 phone
-              )}
-            </p>
-            <p className="contact-note">Mo-Fr: 08:00-18:00 Uhr</p>
-          </div>
+              )
+            }
+            note="Mo-Fr: 08:00-18:00 Uhr"
+          />
 
-          <div className="contact-info-card">
-            <div className="contact-icon">
-              <FiMail size={32} />
-            </div>
-            <h3>E-Mail</h3>
-            <p className="contact-detail">
-              {email ? (
+          <ContactCard
+            title="E-Mail"
+            icon={<FiMail size={24} />}
+            detail={
+              email ? (
                 <a href={`mailto:${email}`} title="E-Mail schreiben">
                   {email}
                 </a>
               ) : (
                 email
-              )}
-            </p>
-            <p className="contact-note">Antwort innerhalb 24h</p>
-          </div>
+              )
+            }
+            note="Antwort innerhalb 24h"
+          />
 
-          <div className="contact-info-card">
-            <div className="contact-icon">
-              <FiMapPin size={32} />
-            </div>
-            <h3>Adresse</h3>
-            <p className="contact-detail">
+          <ContactCard title="Adresse" icon={<FiMapPin size={24} />}>
+            <p className="contact-card-detail">
               {address?.street} {address?.houseNumber}
             </p>
-            <p className="contact-detail">
+            <p className="contact-card-detail">
               {address?.zip} {address?.city}
             </p>
-            <p className="contact-note">Gut erreichbar mit Auto und ÖPNV</p>
-          </div>
+            <p className="contact-card-note">
+              Gut erreichbar mit Auto und ÖPNV
+            </p>
+          </ContactCard>
 
-          <div className="contact-info-card">
-            <div className="contact-icon">
-              <FiClock size={32} />
-            </div>
-            <h3>Öffnungszeiten</h3>
-            <div className="opening-hours">
-              <div className="hours-row">
+          <ContactCard title="Öffnungszeiten" icon={<FiClock size={24} />}>
+            <div className="contact-card-hours">
+              <div className="contact-card-hour-row">
                 <span>Mo-Fr:</span>
                 <span>09:00-18:00</span>
               </div>
-              <div className="hours-row">
+              <div className="contact-card-hour-row">
                 <span>Sa:</span>
                 <span>09:00-13:00</span>
               </div>
-              <div className="hours-row">
+              <div className="contact-card-hour-row">
                 <span>So:</span>
                 <span>Geschlossen</span>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Anfahrt */}
-      <div className="directions-section">
-        <h2>Anfahrt</h2>
-        <div className="directions-grid">
-          <div className="directions-info">
-            <h3>Mit dem Auto</h3>
-            <p>
-              Kostenlose Parkplätze direkt vor der Prüfstelle verfügbar. Die
-              Zufahrt befindet sich über {address?.street}{" "}
-              {address?.houseNumber}.
-            </p>
-            <div className="parking-info">
-              <FiTruck size={20} />
-              <span>Kostenlose Parkplätze</span>
-            </div>
-          </div>
-
-          <div className="directions-info">
-            <h3>Mit öffentlichen Verkehrsmitteln</h3>
-            <p>
-              Nutzen Sie die nächstgelegenen Bus- und Bahnverbindungen nach{" "}
-              {address?.city}.
-            </p>
-            <div className="public-transport">
-              <div className="transport-option">
-                <FiTruck size={20} />
-                <span>Buslinien in {address?.city}</span>
-              </div>
-              <div className="transport-option">
-                <FiTruck size={20} />
-                <span>Nächstgelegener Bahnhof in {address?.city}</span>
-              </div>
-            </div>
-          </div>
+          </ContactCard>
         </div>
       </div>
 
@@ -190,26 +143,10 @@ export const Kontakt: FunctionComponent<Partial<Company>> = ({
             </label>
           </div>
 
-          <button type="submit" className="btn btn-primary btn-large">
+          <button type="submit" className="btn btn-primary">
             Nachricht senden
           </button>
         </form>
-      </div>
-
-      {/* Notfall-Kontakt */}
-      <div className="emergency-contact">
-        <h2>Notfall-Kontakt</h2>
-        <p>Für dringende Angelegenheiten außerhalb der Öffnungszeiten:</p>
-        <div className="emergency-info">
-          <div className="emergency-item">
-            <FiPhone size={24} />
-            <div>
-              <h3>Notfall-Hotline</h3>
-              <p>{phone}</p>
-              <small>Nur für echte Notfälle</small>
-            </div>
-          </div>
-        </div>
       </div>
     </Page>
   );

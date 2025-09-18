@@ -51,10 +51,10 @@
 
 /* Services Section */
 .services-section {
-  padding: 4rem 2rem;
+  padding: 2rem;
   background: #f8fafc;
   border-radius: 20px;
-  margin: 2rem 0;
+  margin: 0;
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
@@ -63,197 +63,28 @@
 .services-section h2 {
   text-align: center;
   font-size: var(--fs-2xl);
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   color: #1f2937;
 }
 
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  gap: 1.25rem;
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
   box-sizing: border-box;
 }
 
-.service-card {
-  background: white;
-  border-radius: 16px;
-  padding: 2rem;
-  text-align: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border: 1px solid #e5e7eb;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.service-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-}
-
-.service-card.featured {
-  background: linear-gradient(135deg, #ef4444, #dc2626);
-  color: white;
-  transform: scale(1.05);
-  border: 2px solid #ef4444;
-}
-
-.service-card.featured::before {
-  content: "Empfohlen";
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: #fbbf24;
-  color: #1f2937;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  font-size: 0.875rem;
-  font-weight: 600;
-}
-
-.service-icon {
-  margin-bottom: 1.5rem;
-}
-
-.service-icon svg {
-  color: #ef4444;
-  width: 48px;
-  height: 48px;
-}
-
-.service-card.featured .service-icon svg {
-  color: #fbbf24;
-}
-
-.service-card h3 {
-  font-size: var(--fs-xl);
-  font-weight: 600;
-  margin-bottom: 1rem;
-  color: #1f2937;
-}
-
-.service-card.featured h3 {
-  color: white;
-}
-
-.service-description {
-  margin-bottom: 2rem;
-  color: #6b7280;
-  line-height: 1.6;
-}
-
-.service-card.featured .service-description {
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.service-details {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 1rem;
-  margin-bottom: 2rem;
-  padding: 1rem;
-  background: #f8fafc;
-  border-radius: 10px;
-  border: 1px solid #e5e7eb;
-}
-
-.service-card.featured .service-details {
-  background: rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.service-detail {
-  text-align: center;
-}
-
-.detail-label {
-  display: block;
-  font-size: var(--fs-sm);
-  color: #5d4d4d;
-  margin-bottom: 0.25rem;
-}
-
-.detail-label-red {
-  display: block;
-  font-size: var(--fs-sm);
-  color: #f1f1f1;
-  margin-bottom: 0.25rem;
-}
-
-.detail-value {
-  display: block;
-  font-weight: 600;
-  color: #ef4444;
-}
-
-.service-card.featured .detail-value {
-  color: #fbbf24;
-}
-
-.service-features {
-  list-style: none;
-  padding: 0;
-  text-align: left;
-  margin-bottom: 2rem;
-}
-
-.service-features li {
-  padding: 0.5rem 0;
-  border-bottom: 1px solid #e5e7eb;
-  color: #4b5563;
-}
-
-.service-card.featured .service-features li {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  color: white;
-}
-
-/* Service Actions */
-.service-actions {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 1.5rem;
-}
-
-.service-actions .btn {
-  padding: 0.5rem 1rem;
-  font-size: 0.875rem;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  font-weight: 500;
-}
-
-.service-actions .btn-danger {
-  background: #ef4444;
-  color: white;
-}
-
-.service-actions .btn-danger:hover {
-  background: #dc2626;
-}
-
-.service-actions .btn-secondary {
-  background: #6b7280;
-  color: white;
-}
-
-.service-actions .btn-secondary:hover {
-  background: #4b5563;
-}
+/* Old service-card styles removed; now using reusable ServiceCard */
 
 /* Additional Services Section */
 .additional-services-section {
-  padding: 4rem 2rem;
+  padding: 2.5rem 1.5rem;
   background: white;
   border-radius: 20px;
-  margin: 2rem 0;
+  margin: 1.25rem 0;
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
@@ -262,87 +93,48 @@
 .additional-services-section h2 {
   text-align: center;
   font-size: var(--fs-2xl);
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   color: #1f2937;
 }
 
 .additional-services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
+  gap: 1rem;
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
   box-sizing: border-box;
 }
 
-.additional-service-card {
-  background: #f8fafc;
-  border-radius: 15px;
-  padding: 2rem;
-  text-align: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border: 1px solid #e5e7eb;
-  transition: all 0.3s ease;
+.additional-services-grid .btn {
+  margin-top: 0.5rem;
 }
 
-.additional-service-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+.additional-services-grid .card-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.25rem;
 }
 
-.additional-service-icon {
-  margin-bottom: 1rem;
-}
-
-.additional-service-icon svg {
-  color: #ef4444;
-  width: 32px;
-  height: 32px;
-}
-
-.additional-service-card h3 {
-  font-size: var(--fs-lg);
-  margin-bottom: 0.5rem;
-  color: #1f2937;
-}
-
-.additional-service-card p {
-  color: #6b7280;
-  margin-bottom: 1rem;
-  line-height: 1.5;
-}
+/* Additional cards use InfoCard */
 
 .price {
-  font-size: var(--fs-xl);
+  font-size: var(--fs-lg);
   font-weight: 700;
   color: #ef4444;
   margin-bottom: 1rem;
   display: block;
 }
 
-.additional-service-card .btn {
-  padding: 0.5rem 1rem;
-  font-size: 0.875rem;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  font-weight: 500;
-  background: #ef4444;
-  color: white;
-}
-
-.additional-service-card .btn:hover {
-  background: #dc2626;
-}
+/* Buttons use global .btn utilities */
 
 /* Vehicle Types Section */
 .vehicle-types-section {
-  padding: 4rem 2rem;
+  padding: 2.5rem 1.5rem;
   background: #f8fafc;
   border-radius: 20px;
-  margin: 2rem 0;
+  margin: 1.25rem 0;
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
@@ -351,55 +143,30 @@
 .vehicle-types-section h2 {
   text-align: center;
   font-size: var(--fs-2xl);
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   color: #1f2937;
 }
 
 .vehicle-types-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
+  gap: 1rem;
   max-width: 1000px;
   margin: 0 auto;
   width: 100%;
   box-sizing: border-box;
 }
 
-.vehicle-type-card {
-  background: white;
-  border-radius: 15px;
-  padding: 2rem;
-  text-align: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border: 1px solid #e5e7eb;
-  transition: all 0.3s ease;
+.vehicle-types-grid .info-card-icon {
+  width: 34px !important;
+  height: 34px !important;
+}
+.vehicle-types-grid .info-card-icon svg {
+  width: 18px !important;
+  height: 18px !important;
 }
 
-.vehicle-type-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
-}
-
-.vehicle-type-icon {
-  margin-bottom: 1rem;
-}
-
-.vehicle-type-icon svg {
-  color: #ef4444;
-  width: 40px;
-  height: 40px;
-}
-
-.vehicle-type-card h3 {
-  font-size: var(--fs-lg);
-  margin-bottom: 0.5rem;
-  color: #1f2937;
-}
-
-.vehicle-type-card p {
-  color: #6b7280;
-  font-size: var(--fs-sm);
-}
+/* Vehicle cards use InfoCard */
 
 /* Vehicle Types CTA */
 .vehicle-types-cta {
@@ -440,56 +207,7 @@
   justify-content: center;
   flex-wrap: wrap;
 }
-
-/* Button Styles */
-.btn {
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 8px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  text-decoration: none;
-  display: inline-block;
-  text-align: center;
-}
-
-.btn-primary {
-  background: #ef4444;
-  color: white;
-}
-
-.btn-primary:hover {
-  background: #dc2626;
-}
-
-.btn-secondary {
-  background: #6b7280;
-  color: white;
-}
-
-.btn-secondary:hover {
-  background: #4b5563;
-}
-
-.btn-danger {
-  background: #ef4444;
-  color: white;
-}
-
-.btn-danger:hover {
-  background: #dc2626;
-}
-
-.btn-large {
-  padding: 1rem 2rem;
-  font-size: 1.125rem;
-}
-
-.btn-small {
-  padding: 0.5rem 1rem;
-  font-size: 0.875rem;
-}
+/* Buttons use global styles from src/index.css */
 
 /* Responsive Design */
 @media (max-width: 768px) {

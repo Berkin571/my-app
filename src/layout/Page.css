@@ -1,16 +1,10 @@
 .page {
-  padding: 2.5rem 1rem;
-}
-
-@media (min-width: 768px) {
-  .page {
-    padding: 3rem 1.25rem;
-  }
+  padding: 1.5rem 1rem;
 }
 
 .page-header {
   text-align: center;
-  margin-bottom: 1.75rem;
+  margin-bottom: 1.5rem;
 }
 
 .page-title {

@@ -3,6 +3,7 @@ import { FiCheck, FiStar, FiUser, FiPlus } from "react-icons/fi";
 import "./UeberUns.css";
 import type { Company } from "../../types";
 import { Page } from "../../layout";
+import { InfoCard } from "../../components";
 
 export const UeberUns: FunctionComponent<Partial<Company>> = ({
   name,
@@ -36,18 +37,21 @@ export const UeberUns: FunctionComponent<Partial<Company>> = ({
             </p>
           </div>
           <div className="story-stats">
-            <div className="stat-item">
-              <div className="stat-number">20+</div>
-              <div className="stat-label">Jahre Erfahrung</div>
-            </div>
-            <div className="stat-item">
-              <div className="stat-number">50.000+</div>
-              <div className="stat-label">Prüfungen durchgeführt</div>
-            </div>
-            <div className="stat-item">
-              <div className="stat-number">98%</div>
-              <div className="stat-label">Kundenzufriedenheit</div>
-            </div>
+            <InfoCard
+              variant="stat"
+              title={<span>20+</span>}
+              subtitle="Jahre Erfahrung"
+            />
+            <InfoCard
+              variant="stat"
+              title={<span>50.000+</span>}
+              subtitle="Prüfungen durchgeführt"
+            />
+            <InfoCard
+              variant="stat"
+              title={<span>98%</span>}
+              subtitle="Kundenzufriedenheit"
+            />
           </div>
         </div>
       </div>
@@ -56,51 +60,32 @@ export const UeberUns: FunctionComponent<Partial<Company>> = ({
       <div className="values-section">
         <h2>Unsere Werte</h2>
         <div className="values-grid">
-          <div className="value-card">
-            <div className="value-icon">
-              <FiCheck size={40} />
-            </div>
-            <h3>Zuverlässigkeit</h3>
+          <InfoCard icon={<FiCheck size={24} />} title="Zuverlässigkeit">
             <p>
               Wir stehen für höchste Qualität und Zuverlässigkeit. Jede Prüfung
               wird mit der gleichen Sorgfalt und nach den aktuellsten Standards
               durchgeführt.
             </p>
-          </div>
-
-          <div className="value-card">
-            <div className="value-icon">
-              <FiStar size={40} />
-            </div>
-            <h3>Transparenz</h3>
+          </InfoCard>
+          <InfoCard icon={<FiStar size={24} />} title="Transparenz">
             <p>
               Transparente Preise ohne versteckte Kosten. Wir erklären Ihnen
               jeden Schritt der Prüfung und zeigen Ihnen genau, was geprüft
               wird.
             </p>
-          </div>
-
-          <div className="value-card">
-            <div className="value-icon">
-              <FiUser size={40} />
-            </div>
-            <h3>Kundenservice</h3>
+          </InfoCard>
+          <InfoCard icon={<FiUser size={24} />} title="Kundenservice">
             <p>
               Ihr Wohlbefinden steht an erster Stelle. Wir nehmen uns Zeit für
               Sie und beantworten gerne alle Ihre Fragen zur Fahrzeugprüfung.
             </p>
-          </div>
-
-          <div className="value-card">
-            <div className="value-icon">
-              <FiPlus size={40} />
-            </div>
-            <h3>Innovation</h3>
+          </InfoCard>
+          <InfoCard icon={<FiPlus size={24} />} title="Innovation">
             <p>
               Wir setzen auf moderne Technologie und kontinuierliche
               Weiterbildung, um Ihnen den bestmöglichen Service zu bieten.
             </p>
-          </div>
+          </InfoCard>
         </div>
       </div>
 
@@ -108,29 +93,24 @@ export const UeberUns: FunctionComponent<Partial<Company>> = ({
       <div className="team-section">
         <h2>Unser Team</h2>
         <div className="team-grid">
-          <div className="team-member">
-            <div className="member-photo">
-              <FiUser size={80} />
-            </div>
-            <h3>Tugrul C.</h3>
+          <InfoCard
+            align="center"
+            icon={<FiUser size={40} />}
+            title="Tugrul C."
+          >
             <p className="member-role">KFZ Prüfingenieur</p>
             <p className="member-description">
               Spezialisiert auf Nutzfahrzeuge und Anhänger. Über 5 Jahre
               Erfahrung in der Prüfung. Exzellenter Service.
             </p>
-          </div>
-
-          <div className="team-member">
-            <div className="member-photo">
-              <FiUser size={80} />
-            </div>
-            <h3>Cihat K.</h3>
+          </InfoCard>
+          <InfoCard align="center" icon={<FiUser size={40} />} title="Cihat K.">
             <p className="member-role">KFZ Prüfingenieur</p>
             <p className="member-description">
               Spezialisiert auf moderne Fahrzeugtechnologien und
               Elektrofahrzeuge. Über 5 Jahre Erfahrung in der Prüfung.
             </p>
-          </div>
+          </InfoCard>
         </div>
       </div>
 
@@ -152,18 +132,24 @@ export const UeberUns: FunctionComponent<Partial<Company>> = ({
             </ul>
           </div>
           <div className="environment-stats">
-            <div className="env-stat">
-              <div className="env-stat-number">-40%</div>
-              <div className="env-stat-label">CO2-Emissionen</div>
-            </div>
-            <div className="env-stat">
-              <div className="env-stat-number">100%</div>
-              <div className="env-stat-label">Digital</div>
-            </div>
-            <div className="env-stat">
-              <div className="env-stat-number">95%</div>
-              <div className="env-stat-label">Recycling</div>
-            </div>
+            <InfoCard
+              variant="stat"
+              accent="green"
+              title={<span>-40%</span>}
+              subtitle="CO2-Emissionen"
+            />
+            <InfoCard
+              variant="stat"
+              accent="blue"
+              title={<span>100%</span>}
+              subtitle="Digital"
+            />
+            <InfoCard
+              variant="stat"
+              accent="green"
+              title={<span>95%</span>}
+              subtitle="Recycling"
+            />
           </div>
         </div>
       </div>
@@ -176,9 +162,7 @@ export const UeberUns: FunctionComponent<Partial<Company>> = ({
           sich.
         </p>
         <div className="cta-buttons">
-          <button className="btn btn-primary btn-large">
-            Jetzt vorbeikommen
-          </button>
+          <button className="btn btn-primary">Jetzt vorbeikommen</button>
           <button className="btn btn-secondary">Kontakt aufnehmen</button>
         </div>
       </div>

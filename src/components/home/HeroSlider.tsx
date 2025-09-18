@@ -53,7 +53,7 @@ export const HeroSlider: FunctionComponent<HeroSliderProps> = ({
               <h2 className="hero-slider__title">{slide.title}</h2>
               <p className="hero-slider__subtitle">{slide.subtitle}</p>
               <button
-                className="btn btn-danger btn-large hero-slider__cta"
+                className="btn btn-danger hero-slider__cta"
                 onClick={() => onCtaClick?.(slide.cta, slide)}
               >
                 {slide.cta}

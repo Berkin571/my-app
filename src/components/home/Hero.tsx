@@ -53,10 +53,7 @@ export const Hero: FunctionComponent<HeroProps> = ({
 
         {primaryCta && (
           <div className="hero__actions">
-            <button
-              className="btn btn-danger btn-large"
-              onClick={primaryCta.onClick}
-            >
+            <button className="btn btn-danger" onClick={primaryCta.onClick}>
               {primaryCta.label}
             </button>
           </div>

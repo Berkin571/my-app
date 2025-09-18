@@ -347,13 +347,7 @@ body {
   width: 100%;
 }
 
-.container {
-  background: var(--text-light);
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow-sm);
-  padding: 2rem;
-  min-height: 400px;
-}
+/* remove local .container styles; use page/components to style surface */
 
 /* Footer */
 .footer {

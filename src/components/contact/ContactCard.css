@@ -1,0 +1,116 @@
+.contact-card {
+  background: white;
+  border-radius: 1rem;
+  padding: 1.5rem 1.25rem;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid #e5e7eb;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    600px circle at var(--x, 0) var(--y, 0),
+    rgba(239, 68, 68, 0.08),
+    transparent 40%
+  );
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+.contact-card:hover::before {
+  opacity: 1;
+}
+
+.contact-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.12);
+}
+
+.contact-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 0.85rem;
+}
+
+.contact-card-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 9999px;
+  background: rgba(239, 68, 68, 0.1);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-card-icon svg {
+  color: #ef4444;
+  width: 22px;
+  height: 22px;
+}
+
+.contact-card h3 {
+  font-size: var(--fs-base);
+  color: #1f2937;
+  font-weight: 700;
+}
+
+.contact-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.contact-card-detail {
+  font-size: var(--fs-base);
+  font-weight: 600;
+  color: #ef4444;
+}
+
+.contact-card-note {
+  color: #6b7280;
+  font-size: var(--fs-sm);
+}
+
+.contact-card-hours {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-top: 0.25rem;
+}
+
+.contact-card-hour-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.contact-card-hour-row:last-child {
+  border-bottom: none;
+}
+
+.contact-card a {
+  color: #ef4444;
+  text-decoration: none;
+}
+
+.contact-card a:hover {
+  text-decoration: underline;
+}
+
+.contact-card:hover .contact-card-icon {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(239, 68, 68, 0.25);
+}

@@ -1,0 +1,130 @@
+.info-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1.75rem;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid #e5e7eb;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.12);
+}
+
+.info-card--left {
+  text-align: left;
+}
+
+.info-card-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+}
+
+.info-card--left .info-card-header {
+  align-items: flex-start;
+}
+
+.info-card-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 9999px;
+  background: rgba(239, 68, 68, 0.08);
+}
+
+.info-card--green .info-card-icon {
+  background: rgba(16, 185, 129, 0.1);
+}
+.info-card--blue .info-card-icon {
+  background: rgba(59, 130, 246, 0.1);
+}
+.info-card--gray .info-card-icon {
+  background: rgba(107, 114, 128, 0.1);
+}
+
+.info-card--sm.info-card--gray .info-card-icon {
+  background: rgba(107, 114, 128, 0.08);
+}
+
+.info-card-icon svg {
+  color: #ef4444;
+  width: 24px;
+  height: 24px;
+}
+.info-card--green .info-card-icon svg {
+  color: #10b981;
+}
+.info-card--blue .info-card-icon svg {
+  color: #3b82f6;
+}
+.info-card--gray .info-card-icon svg {
+  color: #6b7280;
+}
+
+.info-card-title {
+  font-size: var(--fs-lg);
+  color: #1f2937;
+  font-weight: 700;
+}
+
+.info-card--sm .info-card-title {
+  font-size: var(--fs-base);
+}
+
+.info-card-subtitle {
+  color: #6b7280;
+  font-size: var(--fs-sm);
+}
+
+.info-card-body {
+  color: #6b7280;
+  line-height: 1.65;
+}
+
+/* Compact sizing for small variant */
+.info-card--sm {
+  padding: 1.25rem 1rem;
+}
+
+.info-card--sm .info-card-header {
+  gap: 0.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.info-card--sm .info-card-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.info-card--sm .info-card-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.info-card--sm .info-card-body {
+  line-height: 1.55;
+}
+
+.info-card--sm .info-card-body p {
+  font-size: var(--fs-sm);
+  margin-top: 0.15rem;
+}
+
+/* Stat variant */
+.info-card--stat {
+  padding: 1.75rem;
+}
+.info-card--stat .info-card-title {
+  font-size: 2rem;
+  color: #ef4444;
+}
+.info-card--stat .info-card-subtitle {
+  font-size: var(--fs-sm);
+}

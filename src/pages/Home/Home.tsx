@@ -240,7 +240,7 @@ export const Home: FunctionComponent<Partial<Company>> = ({
           Sie Ihr Fahrzeug prüfen.
         </p>
         <div className="cta-buttons">
-          <button className="btn btn-primary btn-large" onClick={handleComeNow}>
+          <button className="btn btn-primary" onClick={handleComeNow}>
             Jetzt vorbeikommen
           </button>
           <span className="cta-divider">oder</span>
