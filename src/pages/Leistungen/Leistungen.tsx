@@ -11,25 +11,18 @@ export const Leistungen: FunctionComponent<Partial<Company>> = ({
   email,
   address,
 }) => {
-  // Button action functions
   const handleComeNow = () => {
-    // Scroll to top and show a message about coming without appointment
     window.scrollTo({ top: 0, behavior: "smooth" });
     alert("Kommen Sie einfach vorbei! Keine Terminvereinbarung nötig.");
   };
 
   const handleViewPrices = () => {
-    // Scroll to services section to show prices
     const servicesSection = document.querySelector(".services-section");
-    if (servicesSection) {
-      servicesSection.scrollIntoView({ behavior: "smooth" });
-    }
+    servicesSection?.scrollIntoView({ behavior: "smooth" });
   };
 
   const handleCall = () => {
-    if (phone) {
-      window.open(`tel:${phone}`, "_self");
-    }
+    if (phone) window.open(`tel:${phone}`, "_self");
   };
 
   const handleEmail = () => {
@@ -37,13 +30,11 @@ export const Leistungen: FunctionComponent<Partial<Company>> = ({
     const body = encodeURIComponent(
       "Guten Tag,\n\nich interessiere mich für Ihre Leistungen.\n\nMit freundlichen Grüßen"
     );
-    if (email) {
+    if (email)
       window.open(`mailto:${email}?subject=${subject}&body=${body}`, "_self");
-    }
   };
 
   const handleGetDirections = () => {
-    // Open Google Maps with directions using company coordinates or address
     let destination = "";
     if (address?.latitude && address?.longitude) {
       destination = `${address.latitude},${address.longitude}`;
@@ -65,8 +56,8 @@ export const Leistungen: FunctionComponent<Partial<Company>> = ({
       subtitle="Professionelle Fahrzeugprüfungen und Prüfplaketten-Vergabe"
     >
       {/* Hauptleistungen */}
-      <div className="services-section">
-        <h2>Hauptleistungen</h2>
+      <section className="services-section" aria-labelledby="services-heading">
+        <h2 id="services-heading">Hauptleistungen</h2>
         <div className="services-grid">
           <ServiceCard
             icon={<FiTool size={28} />}
@@ -78,7 +69,7 @@ export const Leistungen: FunctionComponent<Partial<Company>> = ({
               </p>
             }
             details={[
-              { label: "Dauer:", value: "30-45 Minuten" },
+              { label: "Dauer:", value: "30–45 Minuten" },
               { label: "Gültigkeit:", value: "2 Jahre (Pkw)" },
             ]}
             features={[
@@ -119,7 +110,7 @@ export const Leistungen: FunctionComponent<Partial<Company>> = ({
               </p>
             }
             details={[
-              { label: "Dauer:", value: "45-60 Minuten", emphasizeLabel: true },
+              { label: "Dauer:", value: "45–60 Minuten", emphasizeLabel: true },
               {
                 label: "Gültigkeit:",
                 value: "2 Jahre (Pkw)",
@@ -162,7 +153,7 @@ export const Leistungen: FunctionComponent<Partial<Company>> = ({
               </p>
             }
             details={[
-              { label: "Dauer:", value: "15-20 Minuten" },
+              { label: "Dauer:", value: "15–20 Minuten" },
               { label: "Gültigkeit:", value: "1 Jahr" },
             ]}
             features={[
@@ -190,11 +181,14 @@ export const Leistungen: FunctionComponent<Partial<Company>> = ({
             }
           />
         </div>
-      </div>
+      </section>
 
       {/* Zusatzleistungen */}
-      <div className="additional-services-section">
-        <h2>Zusatzleistungen</h2>
+      <section
+        className="additional-services-section"
+        aria-labelledby="add-services-heading"
+      >
+        <h2 id="add-services-heading">Zusatzleistungen</h2>
         <div className="additional-services-grid">
           <InfoCard size="sm" icon={<FiCheck size={20} />} title="Nachprüfung">
             <p>Erneute Prüfung nach Mängelbehebung</p>
@@ -234,11 +228,14 @@ export const Leistungen: FunctionComponent<Partial<Company>> = ({
             </div>
           </InfoCard>
         </div>
-      </div>
+      </section>
 
       {/* Fahrzeugtypen */}
-      <div className="vehicle-types-section">
-        <h2>Für alle Fahrzeugtypen</h2>
+      <section
+        className="vehicle-types-section"
+        aria-labelledby="vehicle-types-heading"
+      >
+        <h2 id="vehicle-types-heading">Für alle Fahrzeugtypen</h2>
         <div className="vehicle-types-grid">
           <InfoCard
             size="sm"
@@ -278,12 +275,12 @@ export const Leistungen: FunctionComponent<Partial<Company>> = ({
             Standort finden
           </button>
         </div>
-      </div>
+      </section>
 
-      {/* CTA Section */}
-      <div className="leistungen-cta">
+      {/* CTA */}
+      <section className="leistungen-cta" aria-label="Jetzt vorbeikommen">
         <h2>Fahrzeug zur Prüfung bringen?</h2>
-        <p>Kommen Sie einfach vorbei - ohne Termin!</p>
+        <p>Kommen Sie einfach vorbei – ohne Termin!</p>
         <div className="cta-buttons">
           <button className="btn btn-primary" onClick={handleComeNow}>
             Jetzt vorbeikommen
@@ -292,7 +289,7 @@ export const Leistungen: FunctionComponent<Partial<Company>> = ({
             Preise ansehen
           </button>
         </div>
-      </div>
+      </section>
     </Page>
   );
 };

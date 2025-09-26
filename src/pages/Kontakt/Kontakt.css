@@ -1,171 +1,80 @@
-/* Contact Info Section */
-.contact-info-section {
-  padding: 1rem;
-  background: #f8fafc;
-  border-radius: 20px;
-  margin: 1rem 0;
-}
+/* Kontakt – sichere Grids, Map & Form vollständig responsiv */
 
-.contact-info-section h2 {
-  text-align: center;
-  font-size: var(--fs-2xl);
-  margin-bottom: 1rem;
-  color: #1f2937;
-}
-
-.contact-info-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.25rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* Directions Section */
-.directions-section {
-  padding: 4rem 2rem;
-  background: white;
-  border-radius: 20px;
-  margin: 2rem 0;
-}
-
-.directions-section h2 {
-  text-align: center;
-  font-size: var(--fs-2xl);
-  margin-bottom: 2rem;
-  color: #1f2937;
-}
-
-.directions-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.directions-info {
-  background: #f8fafc;
-  border-radius: 12px;
-  padding: 1.25rem;
-  box-shadow: var(--shadow-sm);
-  border: 1px solid #e5e7eb;
-  transition: all 0.2s ease;
-}
-
-.directions-info:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
-}
-
-.directions-info h3 {
-  font-size: var(--fs-base);
-  margin-bottom: 0.5rem;
-  color: #1f2937;
-  font-weight: 600;
-}
-
-.directions-info p {
-  color: #6b7280;
-  line-height: 1.6;
-  margin-bottom: 0.75rem;
-  font-size: var(--fs-sm);
-}
-
-.parking-info,
-.public-transport {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin-top: 1rem;
-}
-
-.parking-info svg,
-.transport-option svg {
-  color: #10b981;
-  width: 18px;
-  height: 18px;
-}
-
-.transport-option {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-top: 0.25rem;
-}
-
-/* Map Section */
-.map-section {
-  padding: 1rem;
-  background: #f8fafc;
-  border-radius: 20px;
-}
-
-.map-section h2 {
-  text-align: center;
-  font-size: var(--fs-2xl);
-  margin-bottom: 1rem;
-  color: #1f2937;
-}
-
-.map-section .subtitle {
-  text-align: center;
-  margin-bottom: 2rem;
-  color: #6b7280;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Contact Form Section */
+.contact-info-section,
+.map-section,
 .contact-form-section {
-  padding: 2rem 1.5rem;
-  background: linear-gradient(180deg, #ffffff, #fbfbfb);
-  border-radius: 16px;
-  border: 1px solid #e5e7eb;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  padding: clamp(1.25rem, 2.5vw, 2rem) clamp(1rem, 3vw, 2rem);
+  border-radius: 20px;
+  margin: clamp(0.75rem, 2vw, 1.25rem) 0;
+  background: #fff;
 }
 
+/* Headings */
+.contact-info-section h2,
+.map-section h2,
 .contact-form-section h2 {
   text-align: center;
   font-size: var(--fs-2xl);
-  margin-bottom: 0.75rem;
+  margin-bottom: clamp(0.75rem, 2vw, 1.25rem);
   color: #1f2937;
 }
 
+/* Kontakt-Karten */
+.contact-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(220px, 100%), 1fr));
+  gap: 1rem;
+  max-width: var(--container-max-width);
+  margin-inline: auto;
+}
+
+/* Map: alle eingebetteten Medien dürfen nie overflowen */
+.map-section {
+  background: #f8fafc;
+}
+.map-section iframe,
+.map-section canvas,
+.map-section img,
+.map-section > * {
+  width: 100% !important;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  overflow: hidden;
+}
+
+/* Formular */
+.contact-form-section {
+  background: linear-gradient(180deg, #ffffff, #fbfbfb);
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
 .contact-form-section > p {
   text-align: center;
-  font-size: var(--fs-base);
-  margin-bottom: 1.25rem;
   color: #6b7280;
   max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto 1rem;
 }
 
 .contact-form {
   max-width: 760px;
-  margin: 0 auto;
+  margin-inline: auto;
 }
-
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
-  margin-bottom: 1.5rem;
+  gap: 1rem;
+  margin-bottom: 1rem;
 }
-
 .form-group {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
-
 .form-group label {
   display: block;
   margin-bottom: 0.4rem;
   font-weight: 600;
   color: #111827;
 }
-
 .form-group input,
 .form-group select,
 .form-group textarea {
@@ -173,66 +82,22 @@
   padding: 0.85rem 1rem;
   border: 1px solid #e5e7eb;
   border-radius: 10px;
-  background: #ffffff;
+  background: #fff;
   color: #111827;
   font-size: var(--fs-sm);
-  transition: all 0.2s ease;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.02) inset;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
-
 .form-group input:hover,
 .form-group select:hover,
 .form-group textarea:hover {
   border-color: #d1d5db;
 }
-
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
   outline: none;
   border-color: #ef4444;
   box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.12);
-}
-
-.form-group input::placeholder,
-.form-group textarea::placeholder {
-  color: #9ca3af;
-}
-
-.form-group select option {
-  background: white;
-  color: #1f2937;
-}
-
-/* Optional input-with-addon wrapper (future icon usage) */
-.input-with-addon {
-  display: flex;
-  align-items: center;
-  border: 1px solid #e5e7eb;
-  border-radius: 10px;
-  background: #ffffff;
-  transition: all 0.2s ease;
-}
-
-.input-with-addon:focus-within {
-  border-color: #ef4444;
-  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.12);
-}
-
-.input-addon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 0.6rem;
-  color: #9ca3af;
-}
-
-.input-with-addon input {
-  border: 0;
-  outline: none;
-  flex: 1 1 auto;
-  padding: 0.85rem 0.9rem;
-  background: transparent;
 }
 
 .checkbox-group {
@@ -244,26 +109,19 @@
   border-radius: 10px;
   background: #fcfcfc;
 }
-
 .checkbox-label {
-  display: inline-flex;
-  align-items: flex-start;
-  gap: 0.5rem;
-  cursor: pointer;
-  font-size: var(--fs-sm);
-  line-height: 1.5;
-  color: #4b5563;
   position: relative;
   padding-left: 1.75rem;
+  display: inline-flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+  font-size: var(--fs-sm);
+  color: #4b5563;
 }
-
 .checkbox-label input[type="checkbox"] {
   position: absolute;
   opacity: 0;
-  width: 0;
-  height: 0;
 }
-
 .checkbox-label .checkmark {
   position: absolute;
   left: 0;
@@ -272,10 +130,8 @@
   height: 1.1rem;
   border: 2px solid #d1d5db;
   border-radius: 6px;
-  background: #ffffff;
-  transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+  background: #fff;
 }
-
 .checkbox-label .checkmark::after {
   content: "";
   position: absolute;
@@ -288,82 +144,37 @@
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
 }
-
 .checkbox-label input[type="checkbox"]:checked ~ .checkmark {
   border-color: #ef4444;
   background: #fff5f5;
 }
-
 .checkbox-label input[type="checkbox"]:checked ~ .checkmark::after {
   display: block;
 }
-
-.checkbox-label input[type="checkbox"]:focus-visible ~ .checkmark {
-  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2);
-}
-
 .checkbox-label a {
   color: #ef4444;
   text-decoration: underline;
 }
 
-.checkbox-label a:hover {
-  color: #dc2626;
-}
-
-/* Submit button centering */
-.contact-form .btn {
-  display: inline-flex;
+.contact-form button[type="submit"] {
+  display: block;
+  margin: 0.25rem auto 0;
   min-width: 220px;
 }
 
-.contact-form button[type="submit"] {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 0.25rem;
+/* Umbrüche sicher */
+.contact-info-section,
+.map-section,
+.contact-form-section {
+  overflow-wrap: anywhere;
 }
 
-/* Responsive Design */
+/* Breakpoints */
 @media (max-width: 768px) {
-  .kontakt-header h1 {
-    font-size: 2.5rem;
-  }
-
-  .contact-info-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .directions-grid {
-    grid-template-columns: 1fr;
-  }
-
   .form-row {
     grid-template-columns: 1fr;
   }
-}
-
-@media (max-width: 480px) {
-  .kontakt-header,
-  .contact-info-section,
-  .directions-section,
-  .map-section,
-  .contact-form-section {
-    padding: 2rem 1rem;
-    margin: 1rem 0;
-  }
-
-  .kontakt-header h1 {
-    font-size: 2rem;
-  }
-
-  .directions-info {
-    padding: 1.5rem;
-  }
-
-  .form-group input,
-  .form-group select,
-  .form-group textarea {
-    padding: 0.75rem;
+  .contact-info-grid {
+    grid-template-columns: 1fr;
   }
 }

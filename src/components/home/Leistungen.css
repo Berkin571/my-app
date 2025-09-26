@@ -1,15 +1,14 @@
 .svc-section {
-  padding: 4rem var(--container-padding-x, 1rem);
+  padding: clamp(2.5rem, 3vw, 4rem) var(--container-padding-x, 1rem);
 }
-
 .svc-group {
   margin: 2.5rem 0;
 }
-
 .svc-header {
   text-align: center;
   margin-bottom: 1.5rem;
 }
+
 .svc-badge {
   display: inline-flex;
   align-items: center;
@@ -28,11 +27,7 @@
   font-size: var(--fs-xl);
   font-weight: 800;
   color: var(--text-primary);
-  background: linear-gradient(
-    135deg,
-    var(--text-primary),
-    #0b162a
-  ); /* dezenter Effekt */
+  background: linear-gradient(135deg, var(--text-primary), #0b162a);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -64,7 +59,7 @@
   border-color: var(--primary-color);
 }
 
-/* Media */
+/* Media – robust */
 .svc-media {
   position: relative;
   aspect-ratio: 16/9;
@@ -76,15 +71,7 @@
   height: 100%;
   object-fit: cover;
   display: block;
-  max-width: 100%;
-  transform: scale(1.02);
-  transition: transform 0.5s ease;
 }
-.svc-card:hover .svc-media img {
-  transform: scale(1.06);
-}
-
-/* Platzhalter, falls kein Bild mitgegeben wurde */
 .svc-media.placeholder {
   background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
 }
@@ -117,7 +104,7 @@
 }
 .svc-card-legal {
   margin: 0.25rem 0 0;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   color: var(--text-secondary);
   border-left: 3px solid var(--primary-color);
   padding-left: 0.5rem;
@@ -144,7 +131,6 @@
     padding: 0.875rem 0.875rem 1rem;
   }
 }
-
 @media (min-width: 1280px) {
   .svc-grid {
     gap: 1.5rem;

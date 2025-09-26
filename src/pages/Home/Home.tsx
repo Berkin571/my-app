@@ -197,63 +197,112 @@ export const Home: FunctionComponent<Partial<Company>> = ({
       />
 
       {/* FAQ Section */}
-      <div className="faq-section">
-        <h2>Häufige Fragen</h2>
+      <section
+        className="faq-section home-faq"
+        aria-labelledby="home-faq-heading"
+      >
+        <h2 id="home-faq-heading">Häufige Fragen</h2>
+
         <div className="faq-grid">
-          <div className="faq-item">
-            <h3>Wie lange dauert eine Hauptuntersuchung?</h3>
-            <p>
-              Eine Hauptuntersuchung dauert in der Regel 30-45 Minuten. Bei
-              einer Kombination aus Haupt- und Abgasuntersuchung rechnen Sie mit
-              45-60 Minuten.
-            </p>
-          </div>
-          <div className="faq-item">
-            <h3>Kann ich ohne Termin kommen?</h3>
-            <p>
-              Ja, Sie können jederzeit ohne Termin vorbeikommen. Wir prüfen Ihr
-              Fahrzeug sofort, wenn wir Kapazität haben.
-            </p>
-          </div>
-          <div className="faq-item">
-            <h3>Was passiert, wenn mein Fahrzeug nicht besteht?</h3>
-            <p>
-              Wir erklären Ihnen genau, welche Mängel behoben werden müssen.
-              Nach der Reparatur können Sie zur Nachprüfung wiederkommen.
-            </p>
-          </div>
-          <div className="faq-item">
-            <h3>Welche Zahlungsarten akzeptieren Sie?</h3>
-            <p>
-              Wir akzeptieren Bargeld, EC-Karte und alle gängigen Kreditkarten.
-              Rechnung ist ebenfalls möglich.
-            </p>
-          </div>
+          <details className="faq-qa">
+            <summary>
+              <span className="faq-q">
+                Wie lange dauert eine Hauptuntersuchung?
+              </span>
+              <span className="faq-toggle" aria-hidden="true" />
+            </summary>
+            <div className="faq-a">
+              <p>
+                Eine Hauptuntersuchung dauert in der Regel 30–45 Minuten. Bei
+                einer Kombination aus Haupt- und Abgasuntersuchung rechnen Sie
+                mit 45–60 Minuten.
+              </p>
+            </div>
+          </details>
+
+          <details className="faq-qa">
+            <summary>
+              <span className="faq-q">Kann ich ohne Termin kommen?</span>
+              <span className="faq-toggle" aria-hidden="true" />
+            </summary>
+            <div className="faq-a">
+              <p>
+                Ja, Sie können jederzeit ohne Termin vorbeikommen. Wir prüfen
+                Ihr Fahrzeug sofort, wenn wir Kapazität haben.
+              </p>
+            </div>
+          </details>
+
+          <details className="faq-qa">
+            <summary>
+              <span className="faq-q">
+                Was passiert, wenn mein Fahrzeug nicht besteht?
+              </span>
+              <span className="faq-toggle" aria-hidden="true" />
+            </summary>
+            <div className="faq-a">
+              <p>
+                Wir erklären Ihnen genau, welche Mängel behoben werden müssen.
+                Nach der Reparatur können Sie zur Nachprüfung wiederkommen.
+              </p>
+            </div>
+          </details>
+
+          <details className="faq-qa">
+            <summary>
+              <span className="faq-q">
+                Welche Zahlungsarten akzeptieren Sie?
+              </span>
+              <span className="faq-toggle" aria-hidden="true" />
+            </summary>
+            <div className="faq-a">
+              <p>
+                Wir akzeptieren Bargeld, EC-Karte und alle gängigen
+                Kreditkarten. Rechnung ist ebenfalls möglich.
+              </p>
+            </div>
+          </details>
         </div>
-      </div>
+
+        <div className="faq-cta-line">
+          <a className="btn btn-secondary btn-small" href="/faq">
+            Alle Fragen ansehen
+          </a>
+        </div>
+      </section>
 
       {/* CTA Section */}
-      <div className="cta-section">
-        <h2>Fahrzeug zur Prüfung bringen?</h2>
-        <p>
-          Keine Terminvereinbarung nötig! Kommen Sie einfach vorbei und lassen
-          Sie Ihr Fahrzeug prüfen.
-        </p>
-        <div className="cta-buttons">
-          <button className="btn btn-primary" onClick={handleComeNow}>
-            Jetzt vorbeikommen
-          </button>
-          <span className="cta-divider">oder</span>
-          <div className="cta-buttons-2">
-            <button className="btn btn-secondary" onClick={handleCall}>
-              Anrufen
+      <section
+        className="cta-section home-cta"
+        aria-label="Sofort prüfen lassen"
+      >
+        <div className="cta-inner">
+          <h2>Fahrzeug zur Prüfung bringen?</h2>
+          <p>
+            Keine Terminvereinbarung nötig! Kommen Sie einfach vorbei und lassen
+            Sie Ihr Fahrzeug prüfen.
+          </p>
+
+          <div className="cta-actions">
+            <button className="btn btn-primary" onClick={handleComeNow}>
+              Jetzt vorbeikommen
             </button>
-            <button className="btn btn-secondary" onClick={handleEmail}>
-              E-Mail
-            </button>
+
+            <span className="cta-or" role="separator">
+              oder
+            </span>
+
+            <div className="cta-duo">
+              <button className="btn btn-secondary" onClick={handleCall}>
+                Anrufen
+              </button>
+              <button className="btn btn-secondary" onClick={handleEmail}>
+                E-Mail
+              </button>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 };

@@ -16,16 +16,8 @@ import "./Layout.css";
 import type { Company } from "../types";
 import logo from "../assets/kues_logo.svg";
 
-type Props = {
-  company: Company;
-  children: ReactNode;
-};
+type Props = { company: Company; children: ReactNode };
 
-/**
- * Layout-Komponente:
- * - mobile-first: eine Spalte mit togglebarer Sidebar
- * - ab Desktop-Breakpoint Grid mit Sidebar
- */
 export const Layout: FunctionComponent<Props> = ({ children, company }) => {
   const navigate = useNavigate();
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -33,41 +25,26 @@ export const Layout: FunctionComponent<Props> = ({ children, company }) => {
   const [hasScrolled, setHasScrolled] = useState(false);
   const location = useLocation();
 
-  const toggleSidebar = () => {
-    setSidebarOpen(!sidebarOpen);
-  };
+  const toggleSidebar = () => setSidebarOpen((s) => !s);
+  const isActive = (path: string) => location.pathname === path;
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
-  const isActive = (path: string) => {
-    return location.pathname === path;
-  };
-
-  // Scroll to top functionality
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
-
-  // Show/hide scroll-to-top button based on scroll position
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      setShowScrollTop(scrollY > 300);
-      setHasScrolled(scrollY > 0);
+    const onScroll = () => {
+      const y = window.scrollY;
+      setShowScrollTop(y > 300);
+      setHasScrolled(y > 0);
     };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
     <div className={`layout ${hasScrolled ? "banner-hidden" : ""}`}>
-      {/* Location Bar */}
       <div className={`location-bar ${hasScrolled ? "scrolled" : ""}`}>
         <div className="location-content">
           <div className="location-left">
-            <span className="location-icon">
+            <span aria-hidden="true">
               <FiMapPin size={16} />
             </span>
             <span className="location-text">
@@ -75,7 +52,7 @@ export const Layout: FunctionComponent<Props> = ({ children, company }) => {
               {company.address.zip} {company.address.city}
             </span>
           </div>
-          <div className="advertisement-container">
+          <div className="advertisement-container" aria-hidden="true">
             <div className="advertisement-text">
               <span>
                 ✓ Professionelle Gutachten ✓ Schnelle Bearbeitung ✓ Faire Preise
@@ -90,27 +67,27 @@ export const Layout: FunctionComponent<Props> = ({ children, company }) => {
         </div>
       </div>
 
-      {/* Header */}
       <header className="header">
         <div className="header-content">
           <div className="header-left">
             <button
               className="sidebar-toggle"
               onClick={toggleSidebar}
-              aria-label="Toggle sidebar"
+              aria-label="Menü öffnen"
             >
               <FiMenu size={24} />
             </button>
             <img
-              style={{
-                width: "auto",
-                height: "40px",
-                cursor: "pointer",
-                marginLeft: "-0.5rem",
-              }}
-              onClick={() => navigate("/")}
+              className="logo"
               src={logo}
-              alt="Logo"
+              alt="KÜS"
+              width={140}
+              height={40}
+              decoding="async"
+              loading="eager"
+              sizes="(max-width: 480px) 120px, (max-width: 1024px) 140px, 160px"
+              onClick={() => navigate("/")}
+              style={{ cursor: "pointer" }}
             />
           </div>
           <div className="header-right">
@@ -126,19 +103,20 @@ export const Layout: FunctionComponent<Props> = ({ children, company }) => {
         </div>
       </header>
 
-      {/* Mobile Sidebar Overlay */}
       {sidebarOpen && (
-        <div className="sidebar-overlay" onClick={toggleSidebar}></div>
+        <div className="sidebar-overlay" onClick={toggleSidebar} />
       )}
 
-      {/* Sidebar */}
-      <aside className={`sidebar ${sidebarOpen ? "sidebar-open" : ""}`}>
+      <aside
+        className={`sidebar ${sidebarOpen ? "sidebar-open" : ""}`}
+        aria-label="Navigation"
+      >
         <div className="sidebar-header">
           <h3>Navigation</h3>
           <button
             className="sidebar-close"
             onClick={toggleSidebar}
-            aria-label="Close sidebar"
+            aria-label="Menü schließen"
           >
             <FiX size={24} />
           </button>
@@ -151,7 +129,7 @@ export const Layout: FunctionComponent<Props> = ({ children, company }) => {
                 className={isActive("/") ? "active" : ""}
                 onClick={toggleSidebar}
               >
-                <FiHome size={20} color="#000" />
+                <FiHome size={20} />
                 Startseite
               </Link>
             </li>
@@ -199,15 +177,13 @@ export const Layout: FunctionComponent<Props> = ({ children, company }) => {
         </nav>
       </aside>
 
-      {/* Main-Content */}
       <main className="main">
         <div className="container">{children}</div>
       </main>
 
-      {/* Footer */}
       <footer className="footer">
         <div className="footer-content">
-          <div className="footer-left">
+          <div>
             <p>
               © {new Date().getFullYear()} {company.name}. Alle Rechte
               vorbehalten.
@@ -227,7 +203,6 @@ export const Layout: FunctionComponent<Props> = ({ children, company }) => {
         </div>
       </footer>
 
-      {/* Scroll to Top Button */}
       <button
         className={`scroll-to-top ${showScrollTop ? "visible" : ""}`}
         onClick={scrollToTop}

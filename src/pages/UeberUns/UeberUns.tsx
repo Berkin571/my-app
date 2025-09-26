@@ -14,9 +14,9 @@ export const UeberUns: FunctionComponent<Partial<Company>> = ({
       title="Über uns"
       subtitle={`Ihre zuverlässige ${name} in ${address?.city} seit 2003`}
     >
-      {/* Unsere Geschichte */}
-      <div className="story-section">
-        <h2>Unsere Geschichte</h2>
+      {/* Geschichte */}
+      <section className="story-section" aria-labelledby="story-heading">
+        <h2 id="story-heading">Unsere Geschichte</h2>
         <div className="story-content">
           <div className="story-text">
             <p>
@@ -27,7 +27,7 @@ export const UeberUns: FunctionComponent<Partial<Company>> = ({
             <p>
               Unser Ziel war und ist es, Fahrzeugprüfungen so einfach und
               kundenfreundlich wie möglich zu gestalten. Deshalb arbeiten wir
-              ohne Termine - Sie kommen einfach vorbei und wir prüfen Ihr
+              ohne Termine – Sie kommen einfach vorbei und wir prüfen Ihr
               Fahrzeug sofort.
             </p>
             <p>
@@ -54,11 +54,11 @@ export const UeberUns: FunctionComponent<Partial<Company>> = ({
             />
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Unsere Werte */}
-      <div className="values-section">
-        <h2>Unsere Werte</h2>
+      {/* Werte */}
+      <section className="values-section" aria-labelledby="values-heading">
+        <h2 id="values-heading">Unsere Werte</h2>
         <div className="values-grid">
           <InfoCard icon={<FiCheck size={24} />} title="Zuverlässigkeit">
             <p>
@@ -87,11 +87,11 @@ export const UeberUns: FunctionComponent<Partial<Company>> = ({
             </p>
           </InfoCard>
         </div>
-      </div>
+      </section>
 
-      {/* Unser Team */}
-      <div className="team-section">
-        <h2>Unser Team</h2>
+      {/* Team */}
+      <section className="team-section" aria-labelledby="team-heading">
+        <h2 id="team-heading">Unser Team</h2>
         <div className="team-grid">
           <InfoCard
             align="center"
@@ -112,11 +112,11 @@ export const UeberUns: FunctionComponent<Partial<Company>> = ({
             </p>
           </InfoCard>
         </div>
-      </div>
+      </section>
 
-      {/* Umwelt & Nachhaltigkeit */}
-      <div className="environment-section">
-        <h2>Umwelt & Nachhaltigkeit</h2>
+      {/* Umwelt */}
+      <section className="environment-section" aria-labelledby="env-heading">
+        <h2 id="env-heading">Umwelt & Nachhaltigkeit</h2>
         <div className="environment-content">
           <div className="environment-text">
             <p>
@@ -128,7 +128,7 @@ export const UeberUns: FunctionComponent<Partial<Company>> = ({
               <li>✓ Digitale Dokumentation statt Papier</li>
               <li>✓ Umweltfreundliche Reinigungsmittel</li>
               <li>✓ Recycling aller Materialien</li>
-              <li>✓ CO2-neutrale Geschäftsprozesse</li>
+              <li>✓ CO₂-neutrale Geschäftsprozesse</li>
             </ul>
           </div>
           <div className="environment-stats">
@@ -136,7 +136,7 @@ export const UeberUns: FunctionComponent<Partial<Company>> = ({
               variant="stat"
               accent="green"
               title={<span>-40%</span>}
-              subtitle="CO2-Emissionen"
+              subtitle="CO₂-Emissionen"
             />
             <InfoCard
               variant="stat"
@@ -152,10 +152,10 @@ export const UeberUns: FunctionComponent<Partial<Company>> = ({
             />
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* CTA Section */}
-      <div className="ueber-uns-cta">
+      {/* CTA */}
+      <section className="ueber-uns-cta" aria-label="Vertrauen Sie uns">
         <h2>Vertrauen Sie uns</h2>
         <p>
           Über 20 Jahre Erfahrung und tausende zufriedene Kunden sprechen für
@@ -165,7 +165,7 @@ export const UeberUns: FunctionComponent<Partial<Company>> = ({
           <button className="btn btn-primary">Jetzt vorbeikommen</button>
           <button className="btn btn-secondary">Kontakt aufnehmen</button>
         </div>
-      </div>
+      </section>
     </Page>
   );
 };

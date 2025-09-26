@@ -31,7 +31,7 @@ export const FAQ: FunctionComponent<Partial<Company>> = ({
       id: 1,
       question: "Wie lange dauert eine Hauptuntersuchung?",
       answer:
-        "Eine Hauptuntersuchung dauert in der Regel 30-45 Minuten. Bei einer Kombination aus Haupt- und Abgasuntersuchung rechnen Sie mit 45-60 Minuten. Die genaue Dauer hängt vom Zustand Ihres Fahrzeugs ab.",
+        "Eine Hauptuntersuchung dauert in der Regel 30–45 Minuten. Bei einer Kombination aus Haupt- und Abgasuntersuchung rechnen Sie mit 45–60 Minuten. Die genaue Dauer hängt vom Zustand Ihres Fahrzeugs ab.",
       category: "allgemein",
     },
     {
@@ -59,7 +59,7 @@ export const FAQ: FunctionComponent<Partial<Company>> = ({
       id: 5,
       question: "Was muss ich zur Prüfung mitbringen?",
       answer:
-        "Sie benötigen: Fahrzeugschein (Zulassungsbescheinigung Teil I), Personalausweis oder Reisepass des Fahrzeughalters und falls vorhanden die letzte gültige Hauptuntersuchung.",
+        "Sie benötigen: Fahrzeugschein (Zulassungsbescheinigung Teil I), Personalausweis oder Reisepass des Fahrzeughalters und – falls vorhanden – die letzte gültige Hauptuntersuchung.",
       category: "allgemein",
     },
     {
@@ -80,14 +80,14 @@ export const FAQ: FunctionComponent<Partial<Company>> = ({
       id: 8,
       question: "Was kostet eine Nachprüfung?",
       answer:
-        "Eine Nachprüfung nach Mängelbehebung kostet 15,00€. Dies ist deutlich günstiger als eine komplette Neuprüfung.",
+        "Eine Nachprüfung nach Mängelbehebung kostet 15,00 €. Dies ist deutlich günstiger als eine komplette Neuprüfung.",
       category: "preise",
     },
     {
       id: 9,
       question: "Gibt es Express-Service?",
       answer:
-        "Ja, wir bieten einen Express-Service an. Bei diesem Service wird Ihr Fahrzeug innerhalb von 15 Minuten geprüft. Der Aufpreis beträgt 10,00€.",
+        "Ja, wir bieten einen Express-Service an. Bei diesem Service wird Ihr Fahrzeug innerhalb von 15 Minuten geprüft. Der Aufpreis beträgt 10,00 €.",
       category: "service",
     },
     {
@@ -124,39 +124,39 @@ export const FAQ: FunctionComponent<Partial<Company>> = ({
 
   const toggleItem = (id: number) => {
     setOpenItems((prev) =>
-      prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]
+      prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]
     );
   };
 
   const filteredFAQ =
     activeCategory === "alle"
       ? faqData
-      : faqData.filter((item) => item.category === activeCategory);
+      : faqData.filter((i) => i.category === activeCategory);
 
   return (
     <Page
       title="Häufige Fragen"
       subtitle="Finden Sie schnell Antworten auf Ihre Fragen zur Fahrzeugprüfung"
     >
-      {/* Kategorie-Filter */}
-      <div className="faq-categories">
+      {/* Kategorien */}
+      <section className="faq-categories" aria-label="Kategorien">
         <div className="categories-grid">
-          {categories.map((category) => (
+          {categories.map((c) => (
             <button
-              key={category.id}
+              key={c.id}
               className={`category-btn ${
-                activeCategory === category.id ? "active" : ""
+                activeCategory === c.id ? "active" : ""
               }`}
-              onClick={() => setActiveCategory(category.id)}
+              onClick={() => setActiveCategory(c.id)}
             >
-              {category.name}
+              {c.name}
             </button>
           ))}
         </div>
-      </div>
+      </section>
 
-      {/* FAQ Liste */}
-      <div className="faq-list">
+      {/* Liste */}
+      <section className="faq-list" aria-label="Fragen und Antworten">
         {filteredFAQ.map((item) => (
           <div key={item.id} className="faq-item">
             <button
@@ -181,7 +181,7 @@ export const FAQ: FunctionComponent<Partial<Company>> = ({
             </div>
           </div>
         ))}
-      </div>
+      </section>
 
       {/* Keine Ergebnisse */}
       {filteredFAQ.length === 0 && (
@@ -195,8 +195,8 @@ export const FAQ: FunctionComponent<Partial<Company>> = ({
         </div>
       )}
 
-      {/* Kontakt Section */}
-      <div className="faq-contact">
+      {/* Kontakt */}
+      <section className="faq-contact" aria-label="Kontaktmöglichkeiten">
         <h2>Weitere Fragen?</h2>
         <p>
           Falls Sie Ihre Frage hier nicht finden, kontaktieren Sie uns gerne
@@ -228,7 +228,7 @@ export const FAQ: FunctionComponent<Partial<Company>> = ({
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </Page>
   );
 };

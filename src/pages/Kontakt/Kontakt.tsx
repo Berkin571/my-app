@@ -14,11 +14,14 @@ export const Kontakt: FunctionComponent<Partial<Company>> = ({
   return (
     <Page
       title="Kontakt"
-      subtitle="Nehmen Sie Kontakt mit uns auf - wir sind für Sie da!"
+      subtitle="Nehmen Sie Kontakt mit uns auf – wir sind für Sie da!"
     >
       {/* Kontakt-Informationen */}
-      <div className="contact-info-section">
-        <h2>So erreichen Sie uns</h2>
+      <section
+        className="contact-info-section"
+        aria-labelledby="contact-heading"
+      >
+        <h2 id="contact-heading">So erreichen Sie uns</h2>
         <div className="contact-info-grid">
           <ContactCard
             title="Telefon"
@@ -32,9 +35,8 @@ export const Kontakt: FunctionComponent<Partial<Company>> = ({
                 phone
               )
             }
-            note="Mo-Fr: 08:00-18:00 Uhr"
+            note="Mo–Fr: 08:00–18:00 Uhr"
           />
-
           <ContactCard
             title="E-Mail"
             icon={<FiMail size={24} />}
@@ -49,7 +51,6 @@ export const Kontakt: FunctionComponent<Partial<Company>> = ({
             }
             note="Antwort innerhalb 24h"
           />
-
           <ContactCard title="Adresse" icon={<FiMapPin size={24} />}>
             <p className="contact-card-detail">
               {address?.street} {address?.houseNumber}
@@ -61,16 +62,15 @@ export const Kontakt: FunctionComponent<Partial<Company>> = ({
               Gut erreichbar mit Auto und ÖPNV
             </p>
           </ContactCard>
-
           <ContactCard title="Öffnungszeiten" icon={<FiClock size={24} />}>
             <div className="contact-card-hours">
               <div className="contact-card-hour-row">
-                <span>Mo-Fr:</span>
-                <span>09:00-18:00</span>
+                <span>Mo–Fr:</span>
+                <span>09:00–18:00</span>
               </div>
               <div className="contact-card-hour-row">
                 <span>Sa:</span>
-                <span>09:00-13:00</span>
+                <span>09:00–13:00</span>
               </div>
               <div className="contact-card-hour-row">
                 <span>So:</span>
@@ -79,11 +79,11 @@ export const Kontakt: FunctionComponent<Partial<Company>> = ({
             </div>
           </ContactCard>
         </div>
-      </div>
+      </section>
 
       {/* Karte */}
-      <div className="map-section">
-        <h2>Unser Standort</h2>
+      <section className="map-section" aria-labelledby="map-heading">
+        <h2 id="map-heading">Unser Standort</h2>
         <GoogleMap
           latitude={address?.latitude ?? 0}
           longitude={address?.longitude ?? 0}
@@ -94,14 +94,14 @@ export const Kontakt: FunctionComponent<Partial<Company>> = ({
             address?.houseNumber ?? ""
           }, ${address?.zip ?? ""} ${address?.city ?? ""}`.trim()}
         />
-      </div>
+      </section>
 
       {/* Kontaktformular */}
-      <div className="contact-form-section">
-        <h2>Nachricht senden</h2>
+      <section className="contact-form-section" aria-labelledby="form-heading">
+        <h2 id="form-heading">Nachricht senden</h2>
         <p>Haben Sie eine spezielle Frage? Senden Sie uns eine Nachricht!</p>
 
-        <form className="contact-form">
+        <form className="contact-form" noValidate>
           <div className="form-row">
             <div className="form-group">
               <label htmlFor="name">Name *</label>
@@ -147,7 +147,7 @@ export const Kontakt: FunctionComponent<Partial<Company>> = ({
             Nachricht senden
           </button>
         </form>
-      </div>
+      </section>
     </Page>
   );
 };
